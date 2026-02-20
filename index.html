@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOT VIBES - خلفية سوداء</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, sans-serif;
+        }
+        
+        body {
+            background: #000000;  /* خلفية سوداء خالصة */
+            color: white;
+        }
+
+        /* إزالة الخلفية النارية وجعلها سوداء */
+        .bg-black {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            z-index: -1;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 60px;
+            background: linear-gradient(45deg, gold, orange, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255,68,0,0.5);
+        }
+
+        .hot-question {
+            font-size: 30px;
+            color: white;
+            background: rgba(255,68,0,0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 20px 0;
+            border: 2px solid #ff4b1f;
+            box-shadow: 0 0 30px rgba(255,68,0,0.3);
+        }
+
+        .download-section {
+            margin: 20px;
+            padding: 30px;
+            background: rgba(255,68,0,0.1);
+            border-radius: 30px;
+            border: 2px solid #ff4b1f;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, #ff4b1f, #ff0844);
+            padding: 20px 50px;
+            border-radius: 60px;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid gold;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 50px rgba(255,68,0,0.5);
+        }
+
+        @keyframes pulse {
+            0%,100% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 80px #ff4b1f; }
+        }
+
+        .hug-message {
+            text-align: center;
+            font-size: 35px;
+            font-weight: bold;
+            margin: 30px;
+            color: gold;
+            text-shadow: 0 0 20px red;
+            animation: move 3s infinite;
+            padding: 10px;
+            border: 2px dashed #ff4b1f;
+            border-radius: 60px;
+            background: rgba(0,0,0,0.5);
+        }
+
+        @keyframes move {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* مؤشر تحميل */
+        .loading-bar {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff4b1f, gold, #ff4b1f);
+            position: fixed;
+            top: 0;
+            left: 0;
+            animation: loading 3s infinite;
+            z-index: 1000;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; opacity: 0.5; }
+            50% { width: 100%; opacity: 1; }
+            100% { width: 0%; opacity: 0.5; }
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 5px;
+            max-width: 100%;
+        }
+
+        .video-card {
+            aspect-ratio: 9/16;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .video-card:hover {
+            border-color: #ff4b1f;
+            transform: scale(1.02);
+            box-shadow: 0 0 30px #ff4b1f;
+            z-index: 10;
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, black, transparent);
+            padding: 20px 10px 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .video-loaded {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #00ff00;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: black;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: #ff4b1f;
+            border: 2px solid gold;
+            border-radius: 50%;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 0 30px #ff4b1f;
+        }
+
+        .load-more {
+            display: block;
+            width: 250px;
+            margin: 30px auto;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff4b1f, #ff0844);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid gold;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(255,68,0,0.5);
+            transition: all 0.3s;
+        }
+
+        .load-more:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px #ff4b1f;
+        }
+
+        .stats {
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            margin: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-black"></div>
+    <div class="loading-bar"></div>
+
+    <div class="header">
+        <h1>HOT VIBES</h1>
+        <div class="hot-question">🔥 هل انت ساخن؟ 🔥</div>
+    </div>
+
+    <div class="download-section">
+        <h2 style="color: gold; font-size: 30px;">🔥 تطبيق الساخن 🔥</h2>
+        <p style="font-size: 20px; margin: 15px 0;">حمله الآن وكن الأكثر سخونة</p>
+        <a href="https://apk.e-droid.net/apk/app3929224-c8u0gn.apk?v=2" class="download-btn">تحميل 🔥</a>
+    </div>
+
+    <div class="hug-message">اجلس بحضني أيها الوغد 🔥</div>
+
+    <div class="video-grid" id="videoGrid"></div>
+
+    <button class="load-more" onclick="loadMore()">المزيد من السخونة 🔥</button>
+
+    <div class="stats" id="stats">جاري تجهيز الفيديوهات...</div>
+
+    <div class="modal" id="videoModal">
+        <button class="close-btn" onclick="closeModal()">✕</button>
+        <video id="modalVideo" controls playsinline></video>
+    </div>
+
+    <script>
+        // كل روابط الفيديوهات (60 فيديو)
+        const videoLinks = [
+            "https://e.top4top.io/m_3702anzpf1.mp4",
+            "https://f.top4top.io/m_370233ki61.mp4",
+            "https://g.top4top.io/m_3702kk1zp1.mp4",
+            "https://h.top4top.io/m_3702z07vv1.mp4",
+            "https://i.top4top.io/m_37022imgr1.mp4",
+            "https://j.top4top.io/m_37026hfae1.mp4",
+            "https://k.top4top.io/m_3702m4amg1.mp4",
+            "https://l.top4top.io/m_3702pbp861.mp4",
+            "https://a.top4top.io/m_3702cm3p91.mp4",
+            "https://b.top4top.io/m_37022u7de1.mp4",
+            "https://c.top4top.io/m_37023hrac1.mp4",
+            "https://d.top4top.io/m_3702fvfdv1.mp4",
+            "https://e.top4top.io/m_3702pmdvd1.mp4",
+            "https://f.top4top.io/m_3702r17wn1.mp4",
+            "https://g.top4top.io/m_370291c8y1.mp4",
+            "https://h.top4top.io/m_3702o2k8t1.mp4",
+            "https://i.top4top.io/m_3702w23cc1.mp4",
+            "https://j.top4top.io/m_3702mbmm31.mp4",
+            "https://l.top4top.io/m_3702rrqnl1.mp4",
+            "https://b.top4top.io/m_3702wwtf31.mp4",
+            "https://e.top4top.io/m_370293jsc1.mp4",
+            "https://f.top4top.io/m_3702c5dic1.mp4",
+            "https://g.top4top.io/m_3702fpamq1.mp4",
+            "https://j.top4top.io/m_3702dd1o41.mp4",
+            "https://i.top4top.io/m_3702d0lbj1.mp4",
+            "https://k.top4top.io/m_3702u46k71.mp4",
+            "https://l.top4top.io/m_3702641861.mp4",
+            "https://b.top4top.io/m_3702hdird1.mp4",
+            "https://d.top4top.io/m_37024mz4c1.mp4",
+            "https://f.top4top.io/m_3702kww8g1.mp4",
+            "https://e.top4top.io/m_3702tpnvw1.mp4",
+            "https://g.top4top.io/m_3702au2kh1.mp4",
+            "https://h.top4top.io/m_3702matrb1.mp4",
+            "https://k.top4top.io/m_3702ka0uh1.mp4",
+            "https://j.top4top.io/m_3702lrozj1.mp4",
+            "https://i.top4top.io/m_3702ec3z01.mp4",
+            "https://l.top4top.io/m_3702q7guj1.mp4",
+            "https://k.top4top.io/m_370251mso1.mp4",
+            "https://j.top4top.io/m_3702ap9d31.mp4",
+            "https://i.top4top.io/m_3702g4fc01.mp4",
+            "https://h.top4top.io/m_3702cneh21.mp4",
+            "https://g.top4top.io/m_3702dfacl1.mp4",
+            "https://e.top4top.io/m_3702up23r1.mp4",
+            "https://d.top4top.io/m_3702p3adq1.mp4",
+            "https://b.top4top.io/m_3702p08rt1.mp4",
+            "https://k.top4top.io/m_3702ssrtt1.mp4",
+            "https://l.top4top.io/m_3702hxiyd1.mp4",
+            "https://f.top4top.io/m_37029i7n70.mp4",
+            "https://g.top4top.io/m_37025c32h1.mp4",
+            "https://h.top4top.io/m_3702foml52.mp4",
+            "https://i.top4top.io/m_3702ysxpd3.mp4",
+            "https://k.top4top.io/m_37021trdr5.mp4",
+            "https://b.top4top.io/m_3702uwvm50.mp4",
+            "https://h.top4top.io/m_3702rosm90.mp4",
+            "https://i.top4top.io/m_3702hfqud1.mp4",
+            "https://j.top4top.io/m_3702a7nwo2.mp4",
+            "https://k.top4top.io/m_3702mdjes3.mp4",
+            "https://l.top4top.io/m_3702hncqf4.mp4"
+        ];
+
+        let startIndex = 0;
+        const videosPerLoad = 30;
+        let loadedVideos = 0;
+
+        // تحميل كل الفيديوهات مسبقاً
+        function preloadAllVideos() {
+            videoLinks.forEach((link, index) => {
+                const preloadVideo = document.createElement('video');
+                preloadVideo.preload = 'auto';
+                preloadVideo.src = link;
+                preloadVideo.load();
+                
+                preloadVideo.oncanplaythrough = () => {
+                    loadedVideos++;
+                    document.getElementById('stats').innerHTML = `تم تجهيز ${loadedVideos} من ${videoLinks.length} فيديو 🔥`;
+                    
+                    if(loadedVideos === videoLinks.length) {
+                        document.getElementById('stats').innerHTML = '✅ كل الفيديوهات جاهزة! شغل على طول ✅';
+                    }
+                };
+            });
+        }
+
+        // تشغيل الفيديو تلقائياً
+        function autoPlay(video) {
+            video.muted = true;
+            video.loop = true;
+            video.preload = 'auto';
+            
+            // محاولة التشغيل
+            const playPromise = video.play();
+            
+            if(playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // إذا فشل التشغيل، نجرب بعد ثانية
+                    setTimeout(() => video.play(), 1000);
+                });
+            }
+        }
+
+        // عرض الفيديوهات
+        function displayVideos() {
+            const grid = document.getElementById('videoGrid');
+            const endIndex = Math.min(startIndex + videosPerLoad, videoLinks.length);
+            
+            for(let i = startIndex; i < endIndex; i++) {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                
+                const video = document.createElement('video');
+                video.src = videoLinks[i];
+                video.muted = true;
+                video.loop = true;
+                video.preload = 'auto';
+                
+                // مؤشر جاهزية
+                const loadedIndicator = document.createElement('div');
+                loadedIndicator.className = 'video-loaded';
+                
+                video.oncanplaythrough = () => {
+                    loadedIndicator.style.display = 'block';
+                    autoPlay(video);
+                };
+                
+                const overlay = document.createElement('div');
+                overlay.className = 'video-overlay';
+                overlay.textContent = `🔥 ${i + 1}`;
+                
+                card.appendChild(video);
+                card.appendChild(loadedIndicator);
+                card.appendChild(overlay);
+                
+                card.onclick = () => {
+                    document.getElementById('modalVideo').src = videoLinks[i];
+                    document.getElementById('videoModal').classList.add('active');
+                    document.getElementById('modalVideo').play();
+                };
+                
+                grid.appendChild(card);
+            }
+            
+            startIndex = endIndex;
+            
+            if(startIndex >= videoLinks.length) {
+                document.querySelector('.load-more').style.display = 'none';
+            }
+        }
+
+        // تحميل المزيد
+        function loadMore() {
+            displayVideos();
+        }
+
+        // إغلاق النافذة
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            video.pause();
+            video.src = '';
+            modal.classList.remove('active');
+        }
+
+        // بدأ التحميل المسبق
+        preloadAllVideos();
+        
+        // بدأ عرض الفيديوهات
+        displayVideos();
+
+        // إغلاق بالنقر خارج الفيديو
+        document.getElementById('videoModal').onclick = function(e) {
+            if(e.target === this) closeModal();
+        };
+    </script>
+</body>
+</html>
