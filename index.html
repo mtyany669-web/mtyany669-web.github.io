@@ -2,12 +2,17 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOT VIBES - النار اللي جواك</title>
-    <meta name="description" content="أقوى فيديوهات للكبار فقط - تجربة نارية لا تُنسى">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>HOT VIBES - أفضل فيديوهات للكبار</title>
+    <meta name="description" content="مشاهدة فيديوهات حصرية للكبار بجودة عالية">
+    <meta name="keywords" content="adult, videos, entertainment, xxx">
+    
+    <!-- تحسين الأداء -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -18,496 +23,303 @@
         body {
             background: #0a0a0f;
             color: #fff;
-            overflow-x: hidden;
         }
 
-        /* خلفية نارية متحركة */
-        .fire-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, #ff4b1f 0%, #0a0a0f 80%);
-            z-index: -2;
-            animation: firePulse 5s infinite;
-        }
-
-        .fire-bg::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(45deg, 
-                rgba(255, 75, 31, 0.1) 0px, 
-                rgba(255, 75, 31, 0.1) 20px,
-                rgba(255, 8, 68, 0.1) 20px, 
-                rgba(255, 8, 68, 0.1) 40px);
-            animation: fireMove 20s linear infinite;
-        }
-
-        @keyframes firePulse {
-            0%,100% { opacity: 0.8; }
-            50% { opacity: 1; }
-        }
-
-        @keyframes fireMove {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-5%, -5%) rotate(5deg); }
-        }
-
-        /* جزيئات نارية */
-        .particle {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: #ff8c00;
-            border-radius: 50%;
-            filter: blur(2px);
-            animation: particleFloat 4s infinite;
-            z-index: -1;
-        }
-
-        @keyframes particleFloat {
-            0% { transform: translateY(0) scale(1); opacity: 0; }
-            50% { transform: translateY(-100px) scale(2); opacity: 1; background: #ff0844; }
-            100% { transform: translateY(-200px) scale(0); opacity: 0; }
-        }
-
-        /* الهيدر الرئيسي */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        /* تصميم بسيط وسريع - مثل المواقع الشهيرة */
+        .header {
+            background: linear-gradient(180deg, #1a1a2e, #0a0a0f);
+            padding: 30px 20px;
             text-align: center;
-            padding: 20px;
-            position: relative;
+            border-bottom: 3px solid #ff4b1f;
         }
 
-        .hero h1 {
-            font-size: 90px;
+        h1 {
+            font-size: 60px;
             font-weight: 900;
-            background: linear-gradient(45deg, #ffd700, #ff4b1f, #ff0844, #ff4b1f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 50px rgba(255, 75, 31, 0.5);
-            margin-bottom: 20px;
-            animation: titleGlow 3s infinite;
-            letter-spacing: 5px;
-        }
-
-        @keyframes titleGlow {
-            0%,100% { filter: drop-shadow(0 0 20px #ff4b1f); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 60px #ff0844); transform: scale(1.02); }
-        }
-
-        .hero p {
-            font-size: 28px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hot-question {
-            font-size: 48px;
-            background: linear-gradient(90deg, transparent, rgba(255,68,0,0.3), transparent);
-            padding: 25px 60px;
-            border-radius: 80px;
-            border: 3px solid #ff4b1f;
-            box-shadow: 0 0 80px rgba(255,68,0,0.5);
-            backdrop-filter: blur(10px);
-            animation: questionPulse 2s infinite;
-            margin-top: 30px;
-        }
-
-        @keyframes questionPulse {
-            0%,100% { transform: scale(1); }
-            50% { transform: scale(1.05); box-shadow: 0 0 120px #ff4b1f; }
-        }
-
-        /* قسم التطبيق */
-        .app-showcase {
-            margin: 60px 20px;
-            padding: 50px;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(20px);
-            border-radius: 70px;
-            border: 3px solid;
-            border-image: linear-gradient(45deg, #ff4b1f, #ffd700, #ff0844) 1;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .app-showcase::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent, rgba(255,68,0,0.3), transparent);
-            animation: rotate 4s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .app-showcase h2 {
-            font-size: 50px;
             background: linear-gradient(45deg, #ffd700, #ff4b1f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 10px;
         }
 
-        .app-showcase p {
+        .subtitle {
             font-size: 24px;
-            color: #fff;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 2;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
         }
 
-        .download-btn {
+        .hot-badge {
             display: inline-block;
-            padding: 25px 70px;
-            background: linear-gradient(45deg, #ff4b1f, #ff0844);
+            background: #ff4b1f;
             color: white;
-            font-size: 32px;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-size: 28px;
             font-weight: bold;
-            text-decoration: none;
-            border-radius: 80px;
-            border: 3px solid #ffd700;
-            box-shadow: 0 0 60px rgba(255,68,0,0.7);
-            position: relative;
-            z-index: 2;
-            animation: downloadPulse 2s infinite;
-            transition: all 0.3s;
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 30px rgba(255,75,31,0.5);
+            animation: pulse 2s infinite;
         }
 
-        .download-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 100px #ffd700;
-        }
-
-        @keyframes downloadPulse {
+        @keyframes pulse {
             0%,100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
 
-        /* رسالة مميزة */
-        .hug-section {
-            text-align: center;
-            margin: 80px 20px;
-            perspective: 1000px;
-        }
-
-        .hug-message {
-            font-size: 60px;
-            font-weight: 900;
-            color: transparent;
-            background: linear-gradient(45deg, #ffd700, #ff4b1f, #ff0844);
-            -webkit-background-clip: text;
-            background-clip: text;
-            padding: 30px 50px;
-            display: inline-block;
-            border: 4px dashed #ff4b1f;
-            border-radius: 120px;
-            backdrop-filter: blur(10px);
-            animation: hug3D 3s infinite;
-            transform-style: preserve-3d;
-            box-shadow: 0 0 80px rgba(255,68,0,0.5);
-        }
-
-        @keyframes hug3D {
-            0%,100% { transform: rotateY(0deg) scale(1); }
-            25% { transform: rotateY(10deg) scale(1.1); }
-            75% { transform: rotateY(-10deg) scale(1.1); }
-        }
-
-        /* إحصائيات */
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 60px 20px;
-            flex-wrap: wrap;
-        }
-
-        .stat-box {
-            background: rgba(255,68,0,0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px 50px;
-            border-radius: 40px;
+        /* قسم التطبيق - بسيط وجذاب */
+        .app-section {
+            margin: 30px 15px;
+            padding: 30px 20px;
+            background: rgba(255,75,31,0.1);
+            border-radius: 30px;
             border: 2px solid #ff4b1f;
             text-align: center;
-            min-width: 200px;
-            animation: statGlow 3s infinite;
+            backdrop-filter: blur(10px);
         }
 
-        .stat-number {
-            font-size: 48px;
-            font-weight: 900;
+        .app-title {
+            font-size: 36px;
             color: #ffd700;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 20px;
-            color: #fff;
-        }
-
-        @keyframes statGlow {
-            0%,100% { box-shadow: 0 0 30px #ff4b1f; }
-            50% { box-shadow: 0 0 70px #ffd700; }
-        }
-
-        /* شبكة الفيديوهات */
-        .videos-header {
-            text-align: center;
-            margin: 60px 20px 30px;
-        }
-
-        .videos-header h2 {
-            font-size: 45px;
-            background: linear-gradient(45deg, #ffd700, #ff4b1f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
         }
 
-        .videos-header p {
-            font-size: 20px;
-            color: rgba(255,255,255,0.7);
+        .app-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff4b1f, #ff0844);
+            color: white;
+            text-decoration: none;
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-size: 26px;
+            font-weight: bold;
+            border: 2px solid #ffd700;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .app-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px #ff4b1f;
+        }
+
+        /* رسالة مميزة */
+        .hug-message {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            margin: 40px 15px;
+            padding: 20px;
+            color: #ffd700;
+            text-shadow: 0 0 30px #ff4b1f;
+            border: 3px dashed #ff4b1f;
+            border-radius: 80px;
+            animation: float 3s infinite;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* شبكة الفيديوهات - تصميم Netflix */
+        .videos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .videos-header h2 {
+            font-size: 28px;
+            color: #ffd700;
+        }
+
+        .video-count {
+            background: #ff4b1f;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 18px;
+            border: 1px solid #ffd700;
         }
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
         }
 
-        .video-item {
+        .video-card {
             position: relative;
-            border-radius: 30px;
+            aspect-ratio: 9/16;
+            border-radius: 15px;
             overflow: hidden;
             cursor: pointer;
-            aspect-ratio: 9/16;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 3px solid transparent;
-            background: linear-gradient(45deg, #ff4b1f, #ff0844);
-            padding: 3px;
+            transition: all 0.3s;
+            background: #1a1a2e;
+            border: 2px solid transparent;
         }
 
-        .video-item:hover {
-            transform: scale(1.05) translateY(-10px);
-            border-color: #ffd700;
-            box-shadow: 0 30px 70px rgba(255, 68, 0, 0.7);
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff4b1f;
+            box-shadow: 0 10px 30px rgba(255,75,31,0.5);
         }
 
-        .video-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 28px;
-            overflow: hidden;
-        }
-
-        .video-item video {
+        .video-card video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.5s;
+            background: #000;
         }
 
-        .video-item:hover video {
-            transform: scale(1.1);
-        }
-
-        .video-badge {
+        /* مؤشر تحميل جميل */
+        .loading-spinner {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(45deg, #ff4b1f, #ff0844);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 40px;
-            font-size: 16px;
-            font-weight: bold;
-            border: 2px solid #ffd700;
-            box-shadow: 0 0 30px rgba(255,68,0,0.5);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255,75,31,0.3);
+            border-top-color: #ffd700;
+            border-radius: 50%;
+            animation: spin 1s infinite;
             z-index: 2;
-            backdrop-filter: blur(5px);
         }
 
-        .video-caption {
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .video-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: #ffd700;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #ff4b1f;
+            z-index: 2;
+        }
+
+        .video-title {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-            padding: 50px 20px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 30px 10px 10px;
             color: white;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 14px;
             text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.4s;
             z-index: 2;
         }
 
-        .video-item:hover .video-caption {
-            transform: translateY(0);
-        }
-
-        .video-caption span {
+        .video-title span {
             color: #ffd700;
-            font-size: 22px;
-            display: block;
-            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: bold;
         }
 
         /* زر تحميل المزيد */
-        .load-more-wrapper {
+        .load-more-container {
             text-align: center;
-            margin: 50px 20px;
+            padding: 30px;
         }
 
         .load-more-btn {
             background: linear-gradient(45deg, #ff4b1f, #ff0844);
             color: white;
             border: none;
-            padding: 20px 60px;
-            font-size: 28px;
+            padding: 16px 50px;
+            font-size: 24px;
             font-weight: bold;
-            border-radius: 80px;
-            border: 3px solid #ffd700;
+            border-radius: 60px;
+            border: 2px solid #ffd700;
             cursor: pointer;
-            box-shadow: 0 0 50px #ff4b1f;
             transition: all 0.3s;
-            animation: moreBtnPulse 2s infinite;
         }
 
         .load-more-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 100px #ffd700;
+            transform: scale(1.05);
+            box-shadow: 0 0 40px #ff4b1f;
         }
 
-        @keyframes moreBtnPulse {
-            0%,100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+        .load-more-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
-        /* تذييل */
-        footer {
+        /* حالة التحميل */
+        .loading-state {
             text-align: center;
             padding: 40px;
-            margin-top: 80px;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            border-top: 2px solid #ff4b1f;
+            color: #ffd700;
+            font-size: 20px;
+        }
+
+        .loading-state::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 3px solid #ffd700;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s infinite;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
             color: rgba(255,255,255,0.5);
-            font-size: 18px;
-        }
-
-        footer span {
-            color: #ff4b1f;
-        }
-
-        /* للأجهزة الصغيرة */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 50px; }
-            .hot-question { font-size: 28px; padding: 15px 30px; }
-            .hug-message { font-size: 35px; }
-            .download-btn { font-size: 24px; padding: 15px 40px; }
-            .stat-box { padding: 20px 30px; }
-            .stat-number { font-size: 35px; }
+            border-top: 1px solid #ff4b1f;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
-    <div class="fire-bg"></div>
-
-    <!-- جزيئات نارية ديناميكية -->
-    <script>
-        for(let i = 0; i < 30; i++) {
-            let particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 3 + 's';
-            particle.style.background = `hsl(${Math.random() * 30 + 10}, 100%, 50%)`;
-            document.body.appendChild(particle);
-        }
-    </script>
-
-    <section class="hero">
+    <div class="header">
         <h1>HOT VIBES</h1>
-        <p>المكان اللي بتشتعل فيه المشاعر 🔥</p>
-        <div class="hot-question">
-            هل أنت ساخن كفاية؟
-        </div>
-    </section>
+        <div class="subtitle">المكان الأكثر سخونة على الإنترنت</div>
+        <div class="hot-badge">🔥 هل أنت ساخن؟ 🔥</div>
+    </div>
 
-    <section class="app-showcase">
-        <h2>🔥 تطبيق HOT VIBES 🔥</h2>
-        <p>حمله الآن وابقى الأكثر سخونة بين أصدقائك</p>
-        <a href="https://apk.e-droid.net/apk/app3929224-c8u0gn.apk?v=3" class="download-btn" target="_blank">
-            🚀 حمل التطبيق
-        </a>
-    </section>
+    <div class="app-section">
+        <div class="app-title">🔥 تطبيق الساخن 🔥</div>
+        <p style="font-size: 18px; margin-bottom: 15px;">حمله الآن واستمتع بالمحتوى الحصري</p>
+        <a href="https://apk.e-droid.net/apk/app3929224-c8u0gn.apk?v=3" class="app-btn" target="_blank">تحميل التطبيق</a>
+    </div>
 
-    <section class="hug-section">
-        <div class="hug-message">
-            🔥 اجلس بحضني أيها الوغد 🔥
-        </div>
-    </section>
+    <div class="hug-message">
+        🔥 اجلس بحضني أيها الوغد 🔥
+    </div>
 
-    <section class="stats-container">
-        <div class="stat-box">
-            <div class="stat-number">60+</div>
-            <div class="stat-label">فيديو حصري</div>
-        </div>
-        <div class="stat-box">
-            <div class="stat-number">4K</div>
-            <div class="stat-label">جودة عالية</div>
-        </div>
-        <div class="stat-box">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">تشغيل تلقائي</div>
-        </div>
-    </section>
-
-    <section class="videos-header">
-        <h2>🎬 أحدث الفيديوهات النارية</h2>
-        <p>اختر ما يناسب مزاجك واستمتع</p>
-    </section>
+    <div class="videos-header">
+        <h2>🎬 أحدث الفيديوهات</h2>
+        <div class="video-count" id="videoCount">0 / 60</div>
+    </div>
 
     <div class="video-grid" id="videoGrid"></div>
 
-    <div class="load-more-wrapper">
-        <button class="load-more-btn" onclick="loadMoreVideos()">
-            🔥 شوف المزيد 🔥
-        </button>
+    <div class="load-more-container">
+        <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreVideos()">تحميل المزيد 🔥</button>
     </div>
 
     <footer>
-        <p>جميع الحقوق النارية محفوظة لـ <span>HOT VIBES</span> © 2026</p>
+        <p>جميع الحقوق محفوظة © 2026 HOT VIBES</p>
     </footer>
 
     <script>
-        // قائمة الفيديوهات (60 فيديو كاملين)
-        const videoList = [
+        // قائمة الفيديوهات (60 فيديو)
+        const videoLinks = [
             "https://e.top4top.io/m_3702anzpf1.mp4",
             "https://f.top4top.io/m_370233ki61.mp4",
             "https://g.top4top.io/m_3702kk1zp1.mp4",
@@ -568,70 +380,115 @@
             "https://l.top4top.io/m_3702hncqf4.mp4"
         ];
 
-        let displayedVideos = 20;
+        // تحسين الأداء: تحميل 9 فيديوهات فقط في البداية
+        let startIndex = 0;
+        const videosPerLoad = 9;
+        let isLoading = false;
 
-        function playVideo(videoElement) {
-            videoElement.muted = true;
-            videoElement.loop = true;
-            videoElement.play().catch(() => {});
+        // تحديث عداد الفيديوهات
+        document.getElementById('videoCount').textContent = `0 / ${videoLinks.length}`;
+
+        // دالة تشغيل الفيديو عند التمرير إليه (Intersection Observer)
+        function setupLazyLoading() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const video = entry.target.querySelector('video');
+                        if (video) {
+                            video.play().catch(() => {});
+                            observer.unobserve(entry.target);
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.video-card').forEach(card => {
+                observer.observe(card);
+            });
         }
 
-        function createVideoItem(videoUrl, index) {
-            const item = document.createElement('div');
-            item.className = 'video-item';
+        // دالة إنشاء بطاقة فيديو
+        function createVideoCard(videoUrl, index) {
+            const card = document.createElement('div');
+            card.className = 'video-card';
             
-            const inner = document.createElement('div');
-            inner.className = 'video-inner';
+            // إضافة مؤشر تحميل
+            const spinner = document.createElement('div');
+            spinner.className = 'loading-spinner';
             
             const video = document.createElement('video');
-            video.src = videoUrl;
             video.muted = true;
             video.loop = true;
+            video.playsInline = true;
+            video.preload = 'metadata'; // تحميل البيانات الأساسية فقط
             
-            setTimeout(() => playVideo(video), 100);
+            // إضافة رقم الفيديو
+            const number = document.createElement('div');
+            number.className = 'video-number';
+            number.textContent = `#${index + 1}`;
             
-            const badge = document.createElement('div');
-            badge.className = 'video-badge';
-            badge.textContent = `#${index + 1}`;
+            // إضافة عنوان الفيديو
+            const title = document.createElement('div');
+            title.className = 'video-title';
+            title.innerHTML = `<span>🔥 فيديو ${index + 1}</span><br>اضغط للتكبير`;
             
-            const caption = document.createElement('div');
-            caption.className = 'video-caption';
-            caption.innerHTML = `<span>🔥 فيديو ${index + 1}</span> اضغط للتكبير`;
+            card.appendChild(spinner);
+            card.appendChild(video);
+            card.appendChild(number);
+            card.appendChild(title);
             
-            inner.appendChild(video);
-            inner.appendChild(badge);
-            inner.appendChild(caption);
-            item.appendChild(inner);
+            // تحميل الفيديو عند ظهور البطاقة
+            setTimeout(() => {
+                video.src = videoUrl;
+                video.load();
+                
+                video.oncanplay = () => {
+                    spinner.remove(); // إزالة مؤشر التحميل
+                };
+            }, 100);
             
-            item.onclick = () => {
+            // فتح الفيديو عند النقر
+            card.onclick = () => {
                 window.open(videoUrl, '_blank');
             };
             
-            return item;
+            return card;
         }
 
+        // دالة عرض الفيديوهات
         function displayVideos() {
             const grid = document.getElementById('videoGrid');
-            grid.innerHTML = '';
+            const endIndex = Math.min(startIndex + videosPerLoad, videoLinks.length);
             
-            for(let i = 0; i < displayedVideos && i < videoList.length; i++) {
-                grid.appendChild(createVideoItem(videoList[i], i));
+            for(let i = startIndex; i < endIndex; i++) {
+                grid.appendChild(createVideoCard(videoLinks[i], i));
+            }
+            
+            startIndex = endIndex;
+            
+            // تحديث العداد
+            document.getElementById('videoCount').textContent = `${startIndex} / ${videoLinks.length}`;
+            
+            // إعداد التحميل البطيء للفيديوهات الجديدة
+            setupLazyLoading();
+            
+            // إخفاء الزر إذا انتهت الفيديوهات
+            if(startIndex >= videoLinks.length) {
+                document.getElementById('loadMoreBtn').disabled = true;
+                document.getElementById('loadMoreBtn').textContent = '🎉 تم تحميل الكل';
             }
         }
 
+        // دالة تحميل المزيد
         function loadMoreVideos() {
-            if(displayedVideos + 10 <= videoList.length) {
-                displayedVideos += 10;
-            } else {
-                displayedVideos = videoList.length;
-            }
-            displayVideos();
-            
-            if(displayedVideos >= videoList.length) {
-                document.querySelector('.load-more-btn').style.display = 'none';
+            if(!isLoading && startIndex < videoLinks.length) {
+                isLoading = true;
+                displayVideos();
+                isLoading = false;
             }
         }
 
+        // بدأ التحميل
         displayVideos();
     </script>
 </body>
