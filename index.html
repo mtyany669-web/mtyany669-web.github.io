@@ -3,277 +3,511 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOT VIBES - خلفية سوداء</title>
+    <title>HOT VIBES - النار اللي جواك</title>
+    <meta name="description" content="أقوى فيديوهات للكبار فقط - تجربة نارية لا تُنسى">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, sans-serif;
-        }
-        
-        body {
-            background: #000000;  /* خلفية سوداء خالصة */
-            color: white;
+            font-family: 'Cairo', sans-serif;
         }
 
-        /* إزالة الخلفية النارية وجعلها سوداء */
-        .bg-black {
+        body {
+            background: #0a0a0f;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* خلفية نارية متحركة */
+        .fire-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #000000;
+            background: radial-gradient(circle at 50% 50%, #ff4b1f 0%, #0a0a0f 80%);
+            z-index: -2;
+            animation: firePulse 5s infinite;
+        }
+
+        .fire-bg::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, 
+                rgba(255, 75, 31, 0.1) 0px, 
+                rgba(255, 75, 31, 0.1) 20px,
+                rgba(255, 8, 68, 0.1) 20px, 
+                rgba(255, 8, 68, 0.1) 40px);
+            animation: fireMove 20s linear infinite;
+        }
+
+        @keyframes firePulse {
+            0%,100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes fireMove {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-5%, -5%) rotate(5deg); }
+        }
+
+        /* جزيئات نارية */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #ff8c00;
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: particleFloat 4s infinite;
             z-index: -1;
         }
 
-        .header {
-            text-align: center;
-            padding: 30px 20px;
-            position: relative;
-            z-index: 1;
+        @keyframes particleFloat {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            50% { transform: translateY(-100px) scale(2); opacity: 1; background: #ff0844; }
+            100% { transform: translateY(-200px) scale(0); opacity: 0; }
         }
 
-        h1 {
-            font-size: 60px;
-            background: linear-gradient(45deg, gold, orange, red);
+        /* الهيدر الرئيسي */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 90px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ffd700, #ff4b1f, #ff0844, #ff4b1f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(255,68,0,0.5);
+            text-shadow: 0 0 50px rgba(255, 75, 31, 0.5);
+            margin-bottom: 20px;
+            animation: titleGlow 3s infinite;
+            letter-spacing: 5px;
+        }
+
+        @keyframes titleGlow {
+            0%,100% { filter: drop-shadow(0 0 20px #ff4b1f); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 60px #ff0844); transform: scale(1.02); }
+        }
+
+        .hero p {
+            font-size: 28px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hot-question {
-            font-size: 30px;
-            color: white;
-            background: rgba(255,68,0,0.2);
-            padding: 15px 30px;
-            border-radius: 50px;
-            display: inline-block;
-            margin: 20px 0;
-            border: 2px solid #ff4b1f;
-            box-shadow: 0 0 30px rgba(255,68,0,0.3);
+            font-size: 48px;
+            background: linear-gradient(90deg, transparent, rgba(255,68,0,0.3), transparent);
+            padding: 25px 60px;
+            border-radius: 80px;
+            border: 3px solid #ff4b1f;
+            box-shadow: 0 0 80px rgba(255,68,0,0.5);
+            backdrop-filter: blur(10px);
+            animation: questionPulse 2s infinite;
+            margin-top: 30px;
         }
 
-        .download-section {
-            margin: 20px;
-            padding: 30px;
-            background: rgba(255,68,0,0.1);
-            border-radius: 30px;
-            border: 2px solid #ff4b1f;
+        @keyframes questionPulse {
+            0%,100% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 120px #ff4b1f; }
+        }
+
+        /* قسم التطبيق */
+        .app-showcase {
+            margin: 60px 20px;
+            padding: 50px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 70px;
+            border: 3px solid;
+            border-image: linear-gradient(45deg, #ff4b1f, #ffd700, #ff0844) 1;
+            position: relative;
+            overflow: hidden;
             text-align: center;
-            backdrop-filter: blur(10px);
+        }
+
+        .app-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, rgba(255,68,0,0.3), transparent);
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .app-showcase h2 {
+            font-size: 50px;
+            background: linear-gradient(45deg, #ffd700, #ff4b1f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .app-showcase p {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
         }
 
         .download-btn {
+            display: inline-block;
+            padding: 25px 70px;
             background: linear-gradient(45deg, #ff4b1f, #ff0844);
-            padding: 20px 50px;
-            border-radius: 60px;
             color: white;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             text-decoration: none;
-            display: inline-block;
-            border: 2px solid gold;
-            margin-top: 20px;
-            animation: pulse 2s infinite;
-            box-shadow: 0 0 50px rgba(255,68,0,0.5);
+            border-radius: 80px;
+            border: 3px solid #ffd700;
+            box-shadow: 0 0 60px rgba(255,68,0,0.7);
+            position: relative;
+            z-index: 2;
+            animation: downloadPulse 2s infinite;
+            transition: all 0.3s;
         }
 
-        @keyframes pulse {
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 100px #ffd700;
+        }
+
+        @keyframes downloadPulse {
             0%,100% { transform: scale(1); }
-            50% { transform: scale(1.05); box-shadow: 0 0 80px #ff4b1f; }
+            50% { transform: scale(1.05); }
+        }
+
+        /* رسالة مميزة */
+        .hug-section {
+            text-align: center;
+            margin: 80px 20px;
+            perspective: 1000px;
         }
 
         .hug-message {
+            font-size: 60px;
+            font-weight: 900;
+            color: transparent;
+            background: linear-gradient(45deg, #ffd700, #ff4b1f, #ff0844);
+            -webkit-background-clip: text;
+            background-clip: text;
+            padding: 30px 50px;
+            display: inline-block;
+            border: 4px dashed #ff4b1f;
+            border-radius: 120px;
+            backdrop-filter: blur(10px);
+            animation: hug3D 3s infinite;
+            transform-style: preserve-3d;
+            box-shadow: 0 0 80px rgba(255,68,0,0.5);
+        }
+
+        @keyframes hug3D {
+            0%,100% { transform: rotateY(0deg) scale(1); }
+            25% { transform: rotateY(10deg) scale(1.1); }
+            75% { transform: rotateY(-10deg) scale(1.1); }
+        }
+
+        /* إحصائيات */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 60px 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: rgba(255,68,0,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 50px;
+            border-radius: 40px;
+            border: 2px solid #ff4b1f;
             text-align: center;
-            font-size: 35px;
-            font-weight: bold;
-            margin: 30px;
-            color: gold;
-            text-shadow: 0 0 20px red;
-            animation: move 3s infinite;
-            padding: 10px;
-            border: 2px dashed #ff4b1f;
-            border-radius: 60px;
-            background: rgba(0,0,0,0.5);
+            min-width: 200px;
+            animation: statGlow 3s infinite;
         }
 
-        @keyframes move {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ffd700;
+            margin-bottom: 10px;
         }
 
-        /* مؤشر تحميل */
-        .loading-bar {
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #ff4b1f, gold, #ff4b1f);
-            position: fixed;
-            top: 0;
-            left: 0;
-            animation: loading 3s infinite;
-            z-index: 1000;
+        .stat-label {
+            font-size: 20px;
+            color: #fff;
         }
 
-        @keyframes loading {
-            0% { width: 0%; opacity: 0.5; }
-            50% { width: 100%; opacity: 1; }
-            100% { width: 0%; opacity: 0.5; }
+        @keyframes statGlow {
+            0%,100% { box-shadow: 0 0 30px #ff4b1f; }
+            50% { box-shadow: 0 0 70px #ffd700; }
+        }
+
+        /* شبكة الفيديوهات */
+        .videos-header {
+            text-align: center;
+            margin: 60px 20px 30px;
+        }
+
+        .videos-header h2 {
+            font-size: 45px;
+            background: linear-gradient(45deg, #ffd700, #ff4b1f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .videos-header p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
         }
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
-            padding: 5px;
-            max-width: 100%;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .video-card {
-            aspect-ratio: 9/16;
+        .video-item {
             position: relative;
+            border-radius: 30px;
             overflow: hidden;
-            border: 2px solid transparent;
-            transition: all 0.3s;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, #ff4b1f, #ff0844);
+            padding: 3px;
         }
 
-        .video-card:hover {
-            border-color: #ff4b1f;
-            transform: scale(1.02);
-            box-shadow: 0 0 30px #ff4b1f;
-            z-index: 10;
+        .video-item:hover {
+            transform: scale(1.05) translateY(-10px);
+            border-color: #ffd700;
+            box-shadow: 0 30px 70px rgba(255, 68, 0, 0.7);
         }
 
-        .video-card video {
+        .video-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+
+        .video-item video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: all 0.5s;
         }
 
-        .video-overlay {
+        .video-item:hover video {
+            transform: scale(1.1);
+        }
+
+        .video-badge {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, black, transparent);
-            padding: 20px 10px 10px;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .video-loaded {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: #00ff00;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: none;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: black;
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal video {
-            width: 100%;
-            height: 100%;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 50px;
-            height: 50px;
-            background: #ff4b1f;
-            border: 2px solid gold;
-            border-radius: 50%;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            z-index: 1001;
-            box-shadow: 0 0 30px #ff4b1f;
-        }
-
-        .load-more {
-            display: block;
-            width: 250px;
-            margin: 30px auto;
-            padding: 15px;
+            top: 15px;
+            right: 15px;
             background: linear-gradient(45deg, #ff4b1f, #ff0844);
-            border: none;
-            border-radius: 50px;
             color: white;
-            font-size: 20px;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 16px;
             font-weight: bold;
-            border: 2px solid gold;
-            cursor: pointer;
+            border: 2px solid #ffd700;
             box-shadow: 0 0 30px rgba(255,68,0,0.5);
-            transition: all 0.3s;
+            z-index: 2;
+            backdrop-filter: blur(5px);
         }
 
-        .load-more:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px #ff4b1f;
-        }
-
-        .stats {
+        .video-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+            padding: 50px 20px 20px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
             text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+            z-index: 2;
+        }
+
+        .video-item:hover .video-caption {
+            transform: translateY(0);
+        }
+
+        .video-caption span {
+            color: #ffd700;
+            font-size: 22px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* زر تحميل المزيد */
+        .load-more-wrapper {
+            text-align: center;
+            margin: 50px 20px;
+        }
+
+        .load-more-btn {
+            background: linear-gradient(45deg, #ff4b1f, #ff0844);
+            color: white;
+            border: none;
+            padding: 20px 60px;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 80px;
+            border: 3px solid #ffd700;
+            cursor: pointer;
+            box-shadow: 0 0 50px #ff4b1f;
+            transition: all 0.3s;
+            animation: moreBtnPulse 2s infinite;
+        }
+
+        .load-more-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 100px #ffd700;
+        }
+
+        @keyframes moreBtnPulse {
+            0%,100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        /* تذييل */
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 80px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            border-top: 2px solid #ff4b1f;
             color: rgba(255,255,255,0.5);
-            margin: 20px;
-            font-size: 14px;
+            font-size: 18px;
+        }
+
+        footer span {
+            color: #ff4b1f;
+        }
+
+        /* للأجهزة الصغيرة */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 50px; }
+            .hot-question { font-size: 28px; padding: 15px 30px; }
+            .hug-message { font-size: 35px; }
+            .download-btn { font-size: 24px; padding: 15px 40px; }
+            .stat-box { padding: 20px 30px; }
+            .stat-number { font-size: 35px; }
         }
     </style>
 </head>
 <body>
-    <div class="bg-black"></div>
-    <div class="loading-bar"></div>
+    <div class="fire-bg"></div>
 
-    <div class="header">
+    <!-- جزيئات نارية ديناميكية -->
+    <script>
+        for(let i = 0; i < 30; i++) {
+            let particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 3 + 's';
+            particle.style.background = `hsl(${Math.random() * 30 + 10}, 100%, 50%)`;
+            document.body.appendChild(particle);
+        }
+    </script>
+
+    <section class="hero">
         <h1>HOT VIBES</h1>
-        <div class="hot-question">🔥 هل انت ساخن؟ 🔥</div>
-    </div>
+        <p>المكان اللي بتشتعل فيه المشاعر 🔥</p>
+        <div class="hot-question">
+            هل أنت ساخن كفاية؟
+        </div>
+    </section>
 
-    <div class="download-section">
-        <h2 style="color: gold; font-size: 30px;">🔥 تطبيق الساخن 🔥</h2>
-        <p style="font-size: 20px; margin: 15px 0;">حمله الآن وكن الأكثر سخونة</p>
-        <a href="https://apk.e-droid.net/apk/app3929224-c8u0gn.apk?v=2" class="download-btn">تحميل 🔥</a>
-    </div>
+    <section class="app-showcase">
+        <h2>🔥 تطبيق HOT VIBES 🔥</h2>
+        <p>حمله الآن وابقى الأكثر سخونة بين أصدقائك</p>
+        <a href="https://apk.e-droid.net/apk/app3929224-c8u0gn.apk?v=3" class="download-btn" target="_blank">
+            🚀 حمل التطبيق
+        </a>
+    </section>
 
-    <div class="hug-message">اجلس بحضني أيها الوغد 🔥</div>
+    <section class="hug-section">
+        <div class="hug-message">
+            🔥 اجلس بحضني أيها الوغد 🔥
+        </div>
+    </section>
+
+    <section class="stats-container">
+        <div class="stat-box">
+            <div class="stat-number">60+</div>
+            <div class="stat-label">فيديو حصري</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">4K</div>
+            <div class="stat-label">جودة عالية</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">تشغيل تلقائي</div>
+        </div>
+    </section>
+
+    <section class="videos-header">
+        <h2>🎬 أحدث الفيديوهات النارية</h2>
+        <p>اختر ما يناسب مزاجك واستمتع</p>
+    </section>
 
     <div class="video-grid" id="videoGrid"></div>
 
-    <button class="load-more" onclick="loadMore()">المزيد من السخونة 🔥</button>
-
-    <div class="stats" id="stats">جاري تجهيز الفيديوهات...</div>
-
-    <div class="modal" id="videoModal">
-        <button class="close-btn" onclick="closeModal()">✕</button>
-        <video id="modalVideo" controls playsinline></video>
+    <div class="load-more-wrapper">
+        <button class="load-more-btn" onclick="loadMoreVideos()">
+            🔥 شوف المزيد 🔥
+        </button>
     </div>
 
+    <footer>
+        <p>جميع الحقوق النارية محفوظة لـ <span>HOT VIBES</span> © 2026</p>
+    </footer>
+
     <script>
-        // كل روابط الفيديوهات (60 فيديو)
-        const videoLinks = [
+        // قائمة الفيديوهات (60 فيديو كاملين)
+        const videoList = [
             "https://e.top4top.io/m_3702anzpf1.mp4",
             "https://f.top4top.io/m_370233ki61.mp4",
             "https://g.top4top.io/m_3702kk1zp1.mp4",
@@ -334,118 +568,71 @@
             "https://l.top4top.io/m_3702hncqf4.mp4"
         ];
 
-        let startIndex = 0;
-        const videosPerLoad = 30;
-        let loadedVideos = 0;
+        let displayedVideos = 20;
 
-        // تحميل كل الفيديوهات مسبقاً
-        function preloadAllVideos() {
-            videoLinks.forEach((link, index) => {
-                const preloadVideo = document.createElement('video');
-                preloadVideo.preload = 'auto';
-                preloadVideo.src = link;
-                preloadVideo.load();
-                
-                preloadVideo.oncanplaythrough = () => {
-                    loadedVideos++;
-                    document.getElementById('stats').innerHTML = `تم تجهيز ${loadedVideos} من ${videoLinks.length} فيديو 🔥`;
-                    
-                    if(loadedVideos === videoLinks.length) {
-                        document.getElementById('stats').innerHTML = '✅ كل الفيديوهات جاهزة! شغل على طول ✅';
-                    }
-                };
-            });
+        function playVideo(videoElement) {
+            videoElement.muted = true;
+            videoElement.loop = true;
+            videoElement.play().catch(() => {});
         }
 
-        // تشغيل الفيديو تلقائياً
-        function autoPlay(video) {
+        function createVideoItem(videoUrl, index) {
+            const item = document.createElement('div');
+            item.className = 'video-item';
+            
+            const inner = document.createElement('div');
+            inner.className = 'video-inner';
+            
+            const video = document.createElement('video');
+            video.src = videoUrl;
             video.muted = true;
             video.loop = true;
-            video.preload = 'auto';
             
-            // محاولة التشغيل
-            const playPromise = video.play();
+            setTimeout(() => playVideo(video), 100);
             
-            if(playPromise !== undefined) {
-                playPromise.catch(() => {
-                    // إذا فشل التشغيل، نجرب بعد ثانية
-                    setTimeout(() => video.play(), 1000);
-                });
-            }
+            const badge = document.createElement('div');
+            badge.className = 'video-badge';
+            badge.textContent = `#${index + 1}`;
+            
+            const caption = document.createElement('div');
+            caption.className = 'video-caption';
+            caption.innerHTML = `<span>🔥 فيديو ${index + 1}</span> اضغط للتكبير`;
+            
+            inner.appendChild(video);
+            inner.appendChild(badge);
+            inner.appendChild(caption);
+            item.appendChild(inner);
+            
+            item.onclick = () => {
+                window.open(videoUrl, '_blank');
+            };
+            
+            return item;
         }
 
-        // عرض الفيديوهات
         function displayVideos() {
             const grid = document.getElementById('videoGrid');
-            const endIndex = Math.min(startIndex + videosPerLoad, videoLinks.length);
+            grid.innerHTML = '';
             
-            for(let i = startIndex; i < endIndex; i++) {
-                const card = document.createElement('div');
-                card.className = 'video-card';
-                
-                const video = document.createElement('video');
-                video.src = videoLinks[i];
-                video.muted = true;
-                video.loop = true;
-                video.preload = 'auto';
-                
-                // مؤشر جاهزية
-                const loadedIndicator = document.createElement('div');
-                loadedIndicator.className = 'video-loaded';
-                
-                video.oncanplaythrough = () => {
-                    loadedIndicator.style.display = 'block';
-                    autoPlay(video);
-                };
-                
-                const overlay = document.createElement('div');
-                overlay.className = 'video-overlay';
-                overlay.textContent = `🔥 ${i + 1}`;
-                
-                card.appendChild(video);
-                card.appendChild(loadedIndicator);
-                card.appendChild(overlay);
-                
-                card.onclick = () => {
-                    document.getElementById('modalVideo').src = videoLinks[i];
-                    document.getElementById('videoModal').classList.add('active');
-                    document.getElementById('modalVideo').play();
-                };
-                
-                grid.appendChild(card);
-            }
-            
-            startIndex = endIndex;
-            
-            if(startIndex >= videoLinks.length) {
-                document.querySelector('.load-more').style.display = 'none';
+            for(let i = 0; i < displayedVideos && i < videoList.length; i++) {
+                grid.appendChild(createVideoItem(videoList[i], i));
             }
         }
 
-        // تحميل المزيد
-        function loadMore() {
+        function loadMoreVideos() {
+            if(displayedVideos + 10 <= videoList.length) {
+                displayedVideos += 10;
+            } else {
+                displayedVideos = videoList.length;
+            }
             displayVideos();
+            
+            if(displayedVideos >= videoList.length) {
+                document.querySelector('.load-more-btn').style.display = 'none';
+            }
         }
 
-        // إغلاق النافذة
-        function closeModal() {
-            const modal = document.getElementById('videoModal');
-            const video = document.getElementById('modalVideo');
-            video.pause();
-            video.src = '';
-            modal.classList.remove('active');
-        }
-
-        // بدأ التحميل المسبق
-        preloadAllVideos();
-        
-        // بدأ عرض الفيديوهات
         displayVideos();
-
-        // إغلاق بالنقر خارج الفيديو
-        document.getElementById('videoModal').onclick = function(e) {
-            if(e.target === this) closeModal();
-        };
     </script>
 </body>
 </html>
