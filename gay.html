@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>فيديوهات مثليين - HOT VIBES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo"><h1>HOT VIBES</h1></div>
+            <nav><ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gay.html">مثليين</a></li>
+                <li><a href="lesbian.html">مثليات</a></li>
+                <li><a href="latest.html">الأحدث</a></li>
+            </ul></nav>
+            <a href="18plus.html" class="age-btn">+18</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>🏳️‍🌈 فيديوهات المثليين</h1>
+        <p>أفضل مجموعة حصرية من الفيديوهات</p>
+    </section>
+
+    <main class="container">
+        <div class="video-grid" id="gayVideos"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom"><p>© 2026 HOT VIBES</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const videos = [
+            "https://e.top4top.io/m_3702anzpf1.mp4",
+            "https://f.top4top.io/m_370233ki61.mp4",
+            "https://g.top4top.io/m_3702kk1zp1.mp4",
+            "https://h.top4top.io/m_3702z07vv1.mp4",
+            "https://i.top4top.io/m_37022imgr1.mp4",
+            "https://j.top4top.io/m_37026hfae1.mp4"
+        ];
+        const grid = document.getElementById('gayVideos');
+        videos.forEach((link, i) => {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            card.onclick = () => window.open(link, '_blank');
+            card.innerHTML = `
+                <div class="video-thumb">
+                    <img src="https://via.placeholder.com/300x200/ff4b1f/fff?text=مثليين+${i+1}">
+                    <span class="video-duration">15:30</span>
+                </div>
+                <div class="video-info">
+                    <h3>🔥 فيديو ${i+1}</h3>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>

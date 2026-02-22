@@ -2,323 +2,76 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>HOT VIBES - أفضل فيديوهات للكبار</title>
-    <meta name="description" content="مشاهدة فيديوهات حصرية للكبار بجودة عالية">
-    <meta name="keywords" content="adult, videos, entertainment, xxx">
-    
-    <!-- تحسين الأداء -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        body {
-            background: #0a0a0f;
-            color: #fff;
-        }
-
-        /* تصميم بسيط وسريع - مثل المواقع الشهيرة */
-        .header {
-            background: linear-gradient(180deg, #1a1a2e, #0a0a0f);
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 3px solid #ff4b1f;
-        }
-
-        h1 {
-            font-size: 60px;
-            font-weight: 900;
-            background: linear-gradient(45deg, #ffd700, #ff4b1f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 20px;
-        }
-
-        .hot-badge {
-            display: inline-block;
-            background: #ff4b1f;
-            color: white;
-            padding: 12px 40px;
-            border-radius: 50px;
-            font-size: 28px;
-            font-weight: bold;
-            border: 2px solid #ffd700;
-            box-shadow: 0 0 30px rgba(255,75,31,0.5);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%,100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* قسم التطبيق - بسيط وجذاب */
-        .app-section {
-            margin: 30px 15px;
-            padding: 30px 20px;
-            background: rgba(255,75,31,0.1);
-            border-radius: 30px;
-            border: 2px solid #ff4b1f;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .app-title {
-            font-size: 36px;
-            color: #ffd700;
-            margin-bottom: 15px;
-        }
-
-        .app-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff4b1f, #ff0844);
-            color: white;
-            text-decoration: none;
-            padding: 18px 50px;
-            border-radius: 60px;
-            font-size: 26px;
-            font-weight: bold;
-            border: 2px solid #ffd700;
-            margin-top: 20px;
-            transition: all 0.3s;
-        }
-
-        .app-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px #ff4b1f;
-        }
-
-        /* رسالة مميزة */
-        .hug-message {
-            text-align: center;
-            font-size: 40px;
-            font-weight: bold;
-            margin: 40px 15px;
-            padding: 20px;
-            color: #ffd700;
-            text-shadow: 0 0 30px #ff4b1f;
-            border: 3px dashed #ff4b1f;
-            border-radius: 80px;
-            animation: float 3s infinite;
-        }
-
-        @keyframes float {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* شبكة الفيديوهات - تصميم Netflix */
-        .videos-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .videos-header h2 {
-            font-size: 28px;
-            color: #ffd700;
-        }
-
-        .video-count {
-            background: #ff4b1f;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-size: 18px;
-            border: 1px solid #ffd700;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding: 10px;
-        }
-
-        .video-card {
-            position: relative;
-            aspect-ratio: 9/16;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: #1a1a2e;
-            border: 2px solid transparent;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff4b1f;
-            box-shadow: 0 10px 30px rgba(255,75,31,0.5);
-        }
-
-        .video-card video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background: #000;
-        }
-
-        /* مؤشر تحميل جميل */
-        .loading-spinner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(255,75,31,0.3);
-            border-top-color: #ffd700;
-            border-radius: 50%;
-            animation: spin 1s infinite;
-            z-index: 2;
-        }
-
-        @keyframes spin {
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .video-number {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.8);
-            color: #ffd700;
-            padding: 5px 12px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid #ff4b1f;
-            z-index: 2;
-        }
-
-        .video-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            padding: 30px 10px 10px;
-            color: white;
-            font-size: 14px;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .video-title span {
-            color: #ffd700;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        /* زر تحميل المزيد */
-        .load-more-container {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .load-more-btn {
-            background: linear-gradient(45deg, #ff4b1f, #ff0844);
-            color: white;
-            border: none;
-            padding: 16px 50px;
-            font-size: 24px;
-            font-weight: bold;
-            border-radius: 60px;
-            border: 2px solid #ffd700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .load-more-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px #ff4b1f;
-        }
-
-        .load-more-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        /* حالة التحميل */
-        .loading-state {
-            text-align: center;
-            padding: 40px;
-            color: #ffd700;
-            font-size: 20px;
-        }
-
-        .loading-state::after {
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            border: 3px solid #ffd700;
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 1s infinite;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: rgba(255,255,255,0.5);
-            border-top: 1px solid #ff4b1f;
-            margin-top: 30px;
-        }
-    </style>
+    <title>HOT VIBES - 81 فيديو حصري</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>HOT VIBES</h1>
-        <div class="subtitle">المكان الأكثر سخونة على الإنترنت</div>
-        <div class="hot-badge">🔥 هل أنت ساخن؟ 🔥</div>
-    </div>
+    <header>
+        <div class="header-container">
+            <div class="logo"><h1>HOT VIBES</h1></div>
+            <nav><ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="gay.html">مثليين</a></li>
+                <li><a href="lesbian.html">مثليات</a></li>
+                <li><a href="latest.html">الأحدث</a></li>
+            </ul></nav>
+            <a href="18plus.html" class="age-btn">+18</a>
+        </div>
+    </header>
 
-    <div class="app-section">
-        <div class="app-title">🔥 تطبيق الساخن 🔥</div>
-        <p style="font-size: 18px; margin-bottom: 15px;">حمله الآن واستمتع بالمحتوى الحصري</p>
-        <a href="https://apk.e-droid.net/apk/app3929224-c8u0gn.apk?v=3" class="app-btn" target="_blank">تحميل التطبيق</a>
-    </div>
+    <section class="hero">
+        <h1>🔥 أهلاً بك في HOT VIBES</h1>
+        <p>أكبر مكتبة فيديوهات حصرية للكبار - 81 فيديو</p>
+        <div class="stats">
+            <span>🔥 81 فيديو</span>
+            <span>⚡ 4K جودة</span>
+            <span>🎥 تشغيل تلقائي</span>
+        </div>
+    </section>
 
-    <div class="hug-message">
-        🔥 اجلس بحضني أيها الوغد 🔥
-    </div>
+    <main class="container">
+        <section>
+            <div class="section-header">
+                <h2>🎬 أحدث الفيديوهات</h2>
+                <a href="latest.html" class="view-all">عرض الكل</a>
+            </div>
+            <div class="video-grid" id="latestVideos"></div>
+        </section>
 
-    <div class="videos-header">
-        <h2>🎬 أحدث الفيديوهات</h2>
-        <div class="video-count" id="videoCount">0 / 60</div>
-    </div>
-
-    <div class="video-grid" id="videoGrid"></div>
-
-    <div class="load-more-container">
-        <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreVideos()">تحميل المزيد 🔥</button>
-    </div>
+        <section>
+            <div class="section-header">
+                <h2>📁 التصنيفات</h2>
+            </div>
+            <div class="categories-grid">
+                <a href="gay.html" class="category-card">🏳️‍🌈 مثليين</a>
+                <a href="lesbian.html" class="category-card">👩‍❤️‍👩 مثليات</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>جميع الحقوق محفوظة © 2026 HOT VIBES</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>حول HOT VIBES</h3>
+                    <p>81 فيديو حصري للكبار بجودة عالية</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط مهمة</h3>
+                    <ul>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms.html">شروط الاستخدام</a></li>
+                        <li><a href="18plus.html">تحذير +18</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 HOT VIBES</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // قائمة الفيديوهات (60 فيديو)
         const videoLinks = [
             "https://e.top4top.io/m_3702anzpf1.mp4",
             "https://f.top4top.io/m_370233ki61.mp4",
@@ -377,119 +130,46 @@
             "https://i.top4top.io/m_3702hfqud1.mp4",
             "https://j.top4top.io/m_3702a7nwo2.mp4",
             "https://k.top4top.io/m_3702mdjes3.mp4",
-            "https://l.top4top.io/m_3702hncqf4.mp4"
+            "https://l.top4top.io/m_3702hncqf4.mp4",
+            "https://e.top4top.io/m_37047vt081.mp4",
+            "https://f.top4top.io/m_3704a1eb91.mp4",
+            "https://g.top4top.io/m_3704qkgc61.mp4",
+            "https://h.top4top.io/m_37041syce1.mp4",
+            "https://i.top4top.io/m_3704eke0w1.mp4",
+            "https://j.top4top.io/m_3704xb3pb1.mp4",
+            "https://k.top4top.io/m_37049qoqc1.mp4",
+            "https://l.top4top.io/m_3704ota8f1.mp4",
+            "https://c.top4top.io/m_3704w2q5n1.mp4",
+            "https://b.top4top.io/m_37040y3gr1.mp4",
+            "https://e.top4top.io/m_3704w1zok1.mp4",
+            "https://d.top4top.io/m_3704lojxw1.mp4",
+            "https://f.top4top.io/m_3704y503r1.mp4",
+            "https://g.top4top.io/m_37041f03m1.mp4",
+            "https://f.top4top.io/m_3704spg5d1.mp4",
+            "https://e.top4top.io/m_3704f3kxf1.mp4",
+            "https://c.top4top.io/m_37043c2uf1.mp4",
+            "https://l.top4top.io/m_3704fesar1.mp4",
+            "https://k.top4top.io/m_3704507h51.mp4",
+            "https://i.top4top.io/m_3704qqy2z1.mp4",
+            "https://h.top4top.io/m_3704ayz7w1.mp4"
         ];
 
-        // تحسين الأداء: تحميل 9 فيديوهات فقط في البداية
-        let startIndex = 0;
-        const videosPerLoad = 9;
-        let isLoading = false;
-
-        // تحديث عداد الفيديوهات
-        document.getElementById('videoCount').textContent = `0 / ${videoLinks.length}`;
-
-        // دالة تشغيل الفيديو عند التمرير إليه (Intersection Observer)
-        function setupLazyLoading() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const video = entry.target.querySelector('video');
-                        if (video) {
-                            video.play().catch(() => {});
-                            observer.unobserve(entry.target);
-                        }
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            document.querySelectorAll('.video-card').forEach(card => {
-                observer.observe(card);
-            });
-        }
-
-        // دالة إنشاء بطاقة فيديو
-        function createVideoCard(videoUrl, index) {
+        const grid = document.getElementById('latestVideos');
+        videoLinks.slice(0, 8).forEach((link, i) => {
             const card = document.createElement('div');
             card.className = 'video-card';
-            
-            // إضافة مؤشر تحميل
-            const spinner = document.createElement('div');
-            spinner.className = 'loading-spinner';
-            
-            const video = document.createElement('video');
-            video.muted = true;
-            video.loop = true;
-            video.playsInline = true;
-            video.preload = 'metadata'; // تحميل البيانات الأساسية فقط
-            
-            // إضافة رقم الفيديو
-            const number = document.createElement('div');
-            number.className = 'video-number';
-            number.textContent = `#${index + 1}`;
-            
-            // إضافة عنوان الفيديو
-            const title = document.createElement('div');
-            title.className = 'video-title';
-            title.innerHTML = `<span>🔥 فيديو ${index + 1}</span><br>اضغط للتكبير`;
-            
-            card.appendChild(spinner);
-            card.appendChild(video);
-            card.appendChild(number);
-            card.appendChild(title);
-            
-            // تحميل الفيديو عند ظهور البطاقة
-            setTimeout(() => {
-                video.src = videoUrl;
-                video.load();
-                
-                video.oncanplay = () => {
-                    spinner.remove(); // إزالة مؤشر التحميل
-                };
-            }, 100);
-            
-            // فتح الفيديو عند النقر
-            card.onclick = () => {
-                window.open(videoUrl, '_blank');
-            };
-            
-            return card;
-        }
-
-        // دالة عرض الفيديوهات
-        function displayVideos() {
-            const grid = document.getElementById('videoGrid');
-            const endIndex = Math.min(startIndex + videosPerLoad, videoLinks.length);
-            
-            for(let i = startIndex; i < endIndex; i++) {
-                grid.appendChild(createVideoCard(videoLinks[i], i));
-            }
-            
-            startIndex = endIndex;
-            
-            // تحديث العداد
-            document.getElementById('videoCount').textContent = `${startIndex} / ${videoLinks.length}`;
-            
-            // إعداد التحميل البطيء للفيديوهات الجديدة
-            setupLazyLoading();
-            
-            // إخفاء الزر إذا انتهت الفيديوهات
-            if(startIndex >= videoLinks.length) {
-                document.getElementById('loadMoreBtn').disabled = true;
-                document.getElementById('loadMoreBtn').textContent = '🎉 تم تحميل الكل';
-            }
-        }
-
-        // دالة تحميل المزيد
-        function loadMoreVideos() {
-            if(!isLoading && startIndex < videoLinks.length) {
-                isLoading = true;
-                displayVideos();
-                isLoading = false;
-            }
-        }
-
-        // بدأ التحميل
-        displayVideos();
+            card.onclick = () => window.open(link, '_blank');
+            card.innerHTML = `
+                <div class="video-thumb">
+                    <img src="https://via.placeholder.com/300x200/ff4b1f/fff?text=فيديو+${i+1}">
+                    <span class="video-duration">15:30</span>
+                </div>
+                <div class="video-info">
+                    <h3>🔥 فيديو ${i+1}</h3>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
     </script>
 </body>
 </html>

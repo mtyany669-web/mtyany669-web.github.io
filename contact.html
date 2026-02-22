@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - HOT VIBES</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-content {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: rgba(26, 26, 46, 0.7);
+            border-radius: 20px;
+            border: 1px solid #ff4b1f;
+        }
+        .contact-content h1 {
+            color: #ffd700;
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact-subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .contact-info {
+            background: rgba(255,75,31,0.1);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .contact-info h2 {
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        .info-item {
+            margin-bottom: 20px;
+        }
+        .info-item h3 {
+            color: #ff4b1f;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .info-item p {
+            color: white;
+            direction: ltr;
+            text-align: left;
+        }
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .contact-form h2 {
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,75,31,0.3);
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff4b1f;
+        }
+        .submit-btn {
+            background: linear-gradient(45deg, #ff4b1f, #ff0844);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid #ffd700;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #ff4b1f;
+        }
+        .faq-section {
+            margin-top: 40px;
+        }
+        .faq-section h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,75,31,0.3);
+            padding-bottom: 15px;
+        }
+        .faq-question {
+            color: #ff4b1f;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .faq-answer {
+            color: rgba(255,255,255,0.8);
+            padding: 10px 0;
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .response-time {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px dashed #ffd700;
+        }
+        .response-time p {
+            color: #ffd700;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>HOT VIBES</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="category/gay.html">مثليين</a></li>
+                    <li><a href="category/lesbian.html">مثليات</a></li>
+                    <li><a href="latest.html">الأحدث</a></li>
+                </ul>
+            </nav>
+            <a href="18plus.html" class="age-btn">+18</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="contact-content">
+            <h1>📬 اتصل بنا</h1>
+            <p class="contact-subtitle">نحن هنا للإجابة على جميع استفساراتك ومساعدتك في أي وقت</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>معلومات الاتصال</h2>
+                    
+                    <div class="info-item">
+                        <h3>📧 البريد الإلكتروني</h3>
+                        <p>support@hotvibes.com</p>
+                        <p>info@hotvibes.com</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>🕒 أوقات العمل</h3>
+                        <p>الدعم الفني: 24 ساعة طوال أيام الأسبوع</p>
+                        <p>الاستفسارات التجارية: 9 صباحاً - 5 مساءً (بتوقيت غرينتش)</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>⚡ وقت الاستجابة</h3>
+                        <p>الاستفسارات العامة: خلال 24 ساعة</p>
+                        <p>المشاكل التقنية: خلال 6 ساعات</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>🌐 تابعنا</h3>
+                        <p style="text-align: right;">
+                            <a href="#" style="color: #ffd700; margin-left: 15px;">تويتر</a>
+                            <a href="#" style="color: #ffd700; margin-left: 15px;">تلغرام</a>
+                            <a href="#" style="color: #ffd700;">إنستغرام</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>أرسل لنا رسالة</h2>
+                    <form id="contactForm" onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');">
+                        <div class="form-group">
+                            <label>الاسم</label>
+                            <input type="text" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>نوع الاستفسار</label>
+                            <select>
+                                <option>استفسار عام</option>
+                                <option>مشكلة تقنية</option>
+                                <option>اقتراح</option>
+                                <option>شكوى</option>
+                                <option>فرصة شراكة</option>
+                                <option>الإعلانات</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>الرسالة</label>
+                            <textarea rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">إرسال الرسالة 🔥</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="response-time">
+                <p>⏱️ متوسط وقت الرد: أقل من 12 ساعة في أيام العمل</p>
+            </div>
+            
+            <div class="faq-section">
+                <h2>❓ الأسئلة الشائعة</h2>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">كيف يمكنني الإبلاغ عن محتوى غير مناسب؟</div>
+                    <div class="faq-answer">يمكنك التواصل معنا عبر نموذج الاتصال أعلاه مع تحديد نوع الاستفسار "إبلاغ عن محتوى". سنقوم بالتحقيق واتخاذ الإجراء المناسب خلال 24 ساعة.</div>
+                </div>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">هل يمكنني طلب إزالة فيديو معين؟</div>
+                    <div class="faq-answer">نعم، إذا كنت تملك حقوق محتوى معين وتعتقد أنه تم نشره بدون إذن، يرجى التواصل معنا مع إثبات الملكية وسنقوم بإزالته فوراً.</div>
+                </div>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">كيف يمكنني الإعلان على موقعكم؟</div>
+                    <div class="faq-answer">للاستفسارات التجارية والشراكات الإعلانية، يرجى التواصل عبر البريد الإلكتروني partners@hotvibes.com وسنرسل لك كتيب الإعلانات الخاص بنا.</div>
+                </div>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">واجهت مشكلة في تشغيل الفيديوهات، ماذا أفعل؟</div>
+                    <div class="faq-answer">تأكد من تحديث متصفحك وجرب استخدام متصفح آخر. إذا استمرت المشكلة، يرجى إرسال تفاصيل المشكلة مع اسم المتصفح ونوع الجهاز عبر نموذج الاتصال.</div>
+                </div>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">هل موقعكم آمن وخصوصي؟</div>
+                    <div class="faq-answer">نعم، نستخدم أحدث تقنيات التشفير لحماية بياناتك. لا نشارك معلوماتك مع أي طرف ثالث دون موافقتك. يمكنك قراءة سياسة الخصوصية لمزيد من التفاصيل.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>حول HOT VIBES</h3>
+                    <p>منصة رائدة في مجال الترفيه للكبار.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط مهمة</h3>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms.html">شروط الاستخدام</a></li>
+                        <li><a href="18plus.html">تحذير +18</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 HOT VIBES - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تشغيل الأسئلة الشائعة
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
