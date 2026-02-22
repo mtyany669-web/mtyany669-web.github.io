@@ -284,6 +284,79 @@
             transform: scale(1.02);
         }
 
+        /* قسم الإعلان المميز (المرئي) */
+        .featured-offer {
+            background: linear-gradient(135deg, #ff1493, #00bfff);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255,20,147,0.3);
+        }
+
+        .featured-offer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: offerGlow 3s infinite;
+        }
+
+        @keyframes offerGlow {
+            0% { transform: rotate(45deg) translate(-100%, -100%); }
+            100% { transform: rotate(45deg) translate(100%, 100%); }
+        }
+
+        .offer-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .featured-offer h3 {
+            font-size: 2.5em;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .featured-offer p {
+            font-size: 1.2em;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 25px;
+        }
+
+        .offer-btn {
+            display: inline-block;
+            background: white;
+            color: #ff1493;
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .offer-btn:hover {
+            transform: scale(1.05);
+            background: transparent;
+            color: white;
+        }
+
         /* Main Content */
         .container {
             max-width: 1400px;
@@ -639,6 +712,17 @@
 
     <!-- Main Content -->
     <div class="container" id="videos">
+
+        <!-- الإعلان الأول: HentaiPros (مرئي) -->
+        <div class="featured-offer">
+            <span class="offer-badge">🔥 عرض خاص لمشاهدي HOT VIBES 🔥</span>
+            <h3>HentaiPros</h3>
+            <p>أفضل ألعاب ورسوم أنمي حصرية للبالغين • جودة عالية ومتعة لا حدود لها</p>
+            <a href="https://landing.hentaipros.com/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MjUsInMiOjIyOCwiZSI6ODk5NiwicCI6Mn0=" target="_blank" class="offer-btn">
+                <i class="fas fa-gamepad"></i> استمتع الآن ←
+            </a>
+        </div>
+
         <div class="section-header">
             <h2 class="section-title">المحتوى المتاح</h2>
         </div>
@@ -676,7 +760,7 @@
         </div>
     </footer>
 
-    <!-- PopAds Code - تمت الإضافة هنا -->
+    <!-- الإعلان الثاني: PopAds (خلفي) -->
     <script type="text/javascript" data-cfasync="false">
 /*<![CDATA[/* */
 (function(){var m=window,d="fd85052e7c840ba967c5c233ddb7a912",c=[["siteId",32*298*621-643078],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],k=["d3d3LmNkbjRhZHMuY29tL1kvZ2NhbnZhcy10by1ibG9iLm1pbi5qcw==","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvVS9wcy91bWVkaXVtLWVkaXRvci5taW4uY3Nz"],q=-1,x,z,w=function(){clearTimeout(z);q++;if(k[q]&&!(1797715620000<(new Date).getTime()&&1<q)){x=m.document.createElement("script");x.type="text/javascript";x.async=!0;var n=m.document.getElementsByTagName("script")[0];x.src="https://"+atob(k[q]);x.crossOrigin="anonymous";x.onerror=w;x.onload=function(){clearTimeout(z);m[d.slice(0,16)+d.slice(0,16)]||w()};z=setTimeout(w,5E3);n.parentNode.insertBefore(x,n)}};if(!m[d]){try{Object.freeze(m[d]=c)}catch(e){}w()}})();
