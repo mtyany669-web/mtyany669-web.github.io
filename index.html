@@ -316,79 +316,7 @@
             border-radius: 2px;
         }
 
-        /* قسم الإعلان المميز */
-        .featured-offer {
-            background: linear-gradient(135deg, #ff1493, #00bfff);
-            border-radius: 30px;
-            padding: 40px;
-            margin: 40px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(255,20,147,0.3);
-        }
-
-        .featured-offer::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            animation: offerGlow 3s infinite;
-        }
-
-        @keyframes offerGlow {
-            0% { transform: rotate(45deg) translate(-100%, -100%); }
-            100% { transform: rotate(45deg) translate(100%, 100%); }
-        }
-
-        .offer-badge {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 8px 25px;
-            border-radius: 50px;
-            display: inline-block;
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .featured-offer h3 {
-            font-size: 2.5em;
-            color: white;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .featured-offer p {
-            font-size: 1.2em;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 25px;
-        }
-
-        .offer-btn {
-            display: inline-block;
-            background: white;
-            color: #ff1493;
-            padding: 18px 50px;
-            border-radius: 60px;
-            font-size: 1.3em;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: 2px solid white;
-        }
-
-        .offer-btn:hover {
-            transform: scale(1.05);
-            background: transparent;
-            color: white;
-        }
-
+        /* Video Grid */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -533,99 +461,12 @@
             font-weight: 600;
         }
 
-        /* Policies Section */
-        .policies-section {
-            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-            padding: 60px 30px;
-            margin-top: 60px;
-            border-top: 1px solid rgba(255,20,147,0.3);
-            border-bottom: 1px solid rgba(255,20,147,0.3);
-        }
-
-        .policies-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .policy-card {
-            background: rgba(255,255,255,0.03);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s;
-        }
-
-        .policy-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff1493;
-            box-shadow: 0 10px 30px rgba(255,20,147,0.2);
-        }
-
-        .policy-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #ff1493, #00bfff);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .policy-icon i {
-            font-size: 1.8em;
-            color: white;
-        }
-
-        .policy-card h3 {
-            color: #ff1493;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .policy-card p {
-            color: #aaa;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .policy-list {
-            list-style: none;
-        }
-
-        .policy-list li {
-            color: #ddd;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .policy-list li i {
-            color: #ff1493;
-            font-size: 0.9em;
-        }
-
-        .policy-highlight {
-            background: rgba(255,20,147,0.1);
-            padding: 15px;
-            border-radius: 12px;
-            border-right: 3px solid #ff1493;
-            margin-top: 20px;
-        }
-
-        .policy-highlight p {
-            color: white;
-            margin: 0;
-        }
-
         /* Footer */
         .footer {
             background: #0f0f0f;
             padding: 60px 30px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-content {
@@ -755,9 +596,9 @@
                     <i class="fas fa-play"></i>
                     تصفح المحتوى
                 </button>
-                <button class="hero-btn secondary" onclick="document.getElementById('policies').scrollIntoView({behavior: 'smooth'})">
-                    <i class="fas fa-shield"></i>
-                    سياسات الموقع
+                <button class="hero-btn secondary" onclick="copySiteLink()">
+                    <i class="fas fa-share"></i>
+                    شارك الموقع
                 </button>
             </div>
         </div>
@@ -776,8 +617,8 @@
             </div>
             <div class="nav-links">
                 <a href="#" class="active">الرئيسية</a>
-                <a href="#policies">السياسات</a>
-                <a href="#contact">اتصل بنا</a>
+                <a href="#">الأكثر مشاهدة</a>
+                <a href="#">جديد</a>
             </div>
         </div>
     </header>
@@ -786,10 +627,12 @@
     <div class="categories">
         <div class="categories-container" id="categoriesContainer">
             <span class="category-item active" onclick="filterVideos('all', this)">الكل</span>
-            <span class="category-item" onclick="filterVideos('حصري', this)">حصري 🔥</span>
-            <span class="category-item" onclick="filterVideos('جديد', this)">جديد 🆕</span>
-            <span class="category-item" onclick="filterVideos('مترجم', this)">مترجم 🌐</span>
-            <span class="category-item" onclick="filterVideos('عربي', this)">عربي 🇸🇦</span>
+            <span class="category-item" onclick="filterVideos('سالب', this)">سالب 🔥</span>
+            <span class="category-item" onclick="filterVideos('موجب', this)">موجب 💪</span>
+            <span class="category-item" onclick="filterVideos('ورع', this)">ورع 🧑</span>
+            <span class="category-item" onclick="filterVideos('مثلي', this)">مثلي 🌈</span>
+            <span class="category-item" onclick="filterVideos('شاذ', this)">شاذ ⚡</span>
+            <span class="category-item" onclick="filterVideos('عربي', this)">عربي 🐪</span>
             <span class="category-item" onclick="filterVideos('أجنبي', this)">أجنبي 🌍</span>
         </div>
     </div>
@@ -799,69 +642,11 @@
         <div class="section-header">
             <h2 class="section-title">المحتوى المتاح</h2>
         </div>
-
-        <!-- قسم الإعلان المميز - HentaiPros فقط (تمت إزالة SpiceVids) -->
-        <div class="featured-offer">
-            <span class="offer-badge">🔥 عرض خاص لمشاهدي HOT VIBES 🔥</span>
-            <h3>HentaiPros</h3>
-            <p>أفضل ألعاب ورسوم أنمي حصرية للبالغين • جودة عالية ومتعة لا حدود لها</p>
-            <a href="https://landing.hentaipros.com/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MjUsInMiOjIyOCwiZSI6ODk5NiwicCI6Mn0=" target="_blank" class="offer-btn">
-                <i class="fas fa-gamepad"></i> استمتع الآن ←
-            </a>
-        </div>
-
         <div class="video-grid" id="videoGrid"></div>
     </div>
 
-    <!-- Policies Section -->
-    <div class="policies-section" id="policies">
-        <div class="policies-container">
-            <!-- Privacy Policy -->
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <h3>سياسة الخصوصية</h3>
-                <p>نحن نلتزم بحماية خصوصيتك وبياناتك الشخصية. جميع المعلومات التي تشاركها معنا محمية بأعلى معايير الأمان.</p>
-                <ul class="policy-list">
-                    <li><i class="fas fa-check-circle"></i> لا نشارك بياناتك مع أطراف ثالثة</li>
-                    <li><i class="fas fa-check-circle"></i> جميع الاتصالات مشفرة بتقنية SSL</li>
-                    <li><i class="fas fa-check-circle"></i> يمكنك طلب حذف بياناتك في أي وقت</li>
-                </ul>
-            </div>
-
-            <!-- Terms of Use -->
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-file-contract"></i>
-                </div>
-                <h3>شروط الاستخدام</h3>
-                <p>باستخدامك لهذا الموقع، فإنك توافق على الالتزام بشروطنا الكاملة:</p>
-                <ul class="policy-list">
-                    <li><i class="fas fa-exclamation-circle"></i> يجب أن تكون فوق 18 سنة لاستخدام الموقع</li>
-                    <li><i class="fas fa-exclamation-circle"></i> يمنع إعادة نشر المحتوى دون إذن</li>
-                    <li><i class="fas fa-exclamation-circle"></i> يمنع استخدام الموقع لأغراض غير قانونية</li>
-                </ul>
-            </div>
-
-            <!-- Community Guidelines -->
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3>إرشادات المجتمع</h3>
-                <p>لضمان تجربة آمنة للجميع، يرجى اتباع هذه الإرشادات:</p>
-                <ul class="policy-list">
-                    <li><i class="fas fa-heart"></i> احترم خصوصية الآخرين</li>
-                    <li><i class="fas fa-heart"></i> لا تنشر تعليقات مسيئة</li>
-                    <li><i class="fas fa-heart"></i> أبلغ عن أي محتوى مخالف</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="footer" id="contact">
+    <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>من نحن</h3>
@@ -874,9 +659,9 @@
             <div class="footer-section">
                 <h3>روابط سريعة</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
-                    <li><a href="#policies"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li>
-                    <li><a href="#policies"><i class="fas fa-chevron-left"></i> شروط الاستخدام</a></li>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الاستخدام</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -885,15 +670,18 @@
                     <li><a href="#"><i class="fas fa-envelope"></i> support@hotvibes.com</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>تأكيد السن</h3>
-                <p>هذا الموقع مخصص للبالغين فقط (+18).</p>
-            </div>
         </div>
         <div class="footer-bottom">
             <p>© 2025-2026 HOT VIBES - جميع الحقوق محفوظة</p>
         </div>
     </footer>
+
+    <!-- PopAds Code - تمت الإضافة هنا -->
+    <script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var m=window,d="fd85052e7c840ba967c5c233ddb7a912",c=[["siteId",32*298*621-643078],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],k=["d3d3LmNkbjRhZHMuY29tL1kvZ2NhbnZhcy10by1ibG9iLm1pbi5qcw==","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvVS9wcy91bWVkaXVtLWVkaXRvci5taW4uY3Nz"],q=-1,x,z,w=function(){clearTimeout(z);q++;if(k[q]&&!(1797715620000<(new Date).getTime()&&1<q)){x=m.document.createElement("script");x.type="text/javascript";x.async=!0;var n=m.document.getElementsByTagName("script")[0];x.src="https://"+atob(k[q]);x.crossOrigin="anonymous";x.onerror=w;x.onload=function(){clearTimeout(z);m[d.slice(0,16)+d.slice(0,16)]||w()};z=setTimeout(w,5E3);n.parentNode.insertBefore(x,n)}};if(!m[d]){try{Object.freeze(m[d]=c)}catch(e){}w()}})();
+/*]]>/* */
+</script>
 
     <script>
         // قائمة الفيديوهات الكاملة (81 فيديو)
@@ -980,27 +768,25 @@
         ];
 
         const videoTitles = [
-            "محتوى حصري 1 🔥",
-            "محتوى حصري 2 🔥",
-            "محتوى حصري 3 🔥",
-            "محتوى حصري 4 🔥",
-            "محتوى حصري 5 🔥",
-            "محتوى حصري 6 🔥",
-            "محتوى حصري 7 🔥",
-            "محتوى حصري 8 🔥",
-            "محتوى حصري 9 🔥",
-            "محتوى حصري 10 🔥",
-            "إضافة جديدة 1 🆕",
-            "إضافة جديدة 2 🆕",
-            "إضافة جديدة 3 🆕",
-            "إضافة جديدة 4 🆕",
-            "محتوى مترجم 1 🌐",
-            "محتوى مترجم 2 🌐",
-            "عربي حصري 🇸🇦",
-            "أجنبي مترجم 🌍"
+            "سالب نار 🔥 حصري",
+            "ورع صغير مثير",
+            "مثلي عربي ساخن",
+            "سالب محترف HD",
+            "موجب فحل خاص",
+            "شاذ حصري جديد",
+            "سالب ممحون 🔥",
+            "ورع مراهق أول مرة",
+            "مثلي لبناني",
+            "سالب مصري جديد",
+            "ورع خليجي حصري",
+            "موجب سعودي 4K",
+            "سالب مغربي",
+            "مثلي تونسي",
+            "سالب جزائري",
+            "ورع عراقي"
         ];
 
-        const categories = ['حصري', 'جديد', 'مترجم', 'عربي', 'أجنبي'];
+        const categories = ['سالب', 'موجب', 'ورع', 'مثلي', 'شاذ', 'عربي', 'أجنبي'];
 
         function loadVideos() {
             const grid = document.getElementById('videoGrid');
@@ -1094,6 +880,11 @@
                     card.style.display = 'none';
                 }
             });
+        }
+
+        function copySiteLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('✅ تم نسخ رابط الموقع!');
         }
 
         document.addEventListener('DOMContentLoaded', loadVideos);
