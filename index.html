@@ -3,17 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>HOT VIBES - منصة المحتوى الحصري للبالغين</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="أكبر منصة محتوى حصري للبالغين - فيديوهات عربية وأجنبية مترجمة - تحديث يومي">
-    <meta name="keywords" content="مثلي, فيديوهات للبالغين, محتوى حصري, عربي, أجنبي, مترجم">
-    <meta name="author" content="HOT VIBES">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23ff1493'><circle cx='50' cy='50' r='40'/></svg>">
-    
+    <title>HOT VIBES - منصة المحتوى الحصري</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -24,18 +14,17 @@
 
         body {
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+            background: #0f0f0f;
             color: white;
             overflow-x: hidden;
         }
 
-        /* Hero Section with Gradient Background */
+        /* Hero Section */
         .hero {
             position: relative;
             width: 100%;
             height: 90vh;
             overflow: hidden;
-            background: linear-gradient(45deg, #0f0f0f, #2a0f1f);
         }
 
         .hero-video {
@@ -46,7 +35,6 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            opacity: 0.5;
         }
 
         .hero-overlay {
@@ -55,7 +43,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+            background: rgba(0, 0, 0, 0.7);
             z-index: 1;
         }
 
@@ -75,17 +63,10 @@
         }
 
         .logo-hero i {
-            font-size: 4em;
-            background: linear-gradient(45deg, #ff1493, #00bfff, #ff1493);
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #ff1493, #00bfff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradientFlow 3s infinite;
-        }
-
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .hero-content h1 {
@@ -95,7 +76,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
-            text-shadow: 0 0 30px rgba(255,20,147,0.5);
         }
 
         .hero-content p {
@@ -128,19 +108,17 @@
         .hero-btn.primary {
             background: linear-gradient(45deg, #ff1493, #00bfff);
             color: white;
-            box-shadow: 0 5px 20px rgba(255,20,147,0.4);
         }
 
         .hero-btn.secondary {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
             color: white;
-            border: 2px solid rgba(255,20,147,0.5);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .hero-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255,20,147,0.6);
         }
 
         .hero-btn:active {
@@ -170,13 +148,12 @@
 
         /* Navigation */
         .header {
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
+            background: #0f0f0f;
             padding: 15px 30px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid rgba(255,20,147,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .nav-container {
@@ -214,18 +191,18 @@
             padding: 12px 20px;
             padding-right: 45px;
             border: none;
-            border-radius: 25px;
-            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
             color: white;
             font-size: 1em;
-            border: 2px solid transparent;
+            border: 1px solid transparent;
             transition: all 0.3s;
         }
 
         .search-box input:focus {
             outline: none;
             border-color: #ff1493;
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.12);
         }
 
         .search-box i {
@@ -270,9 +247,8 @@
         /* Categories */
         .categories {
             padding: 20px 30px;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid rgba(255,20,147,0.2);
+            background: #0f0f0f;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .categories-container {
@@ -290,51 +266,30 @@
             height: 4px;
         }
 
-        .categories-container::-webkit-scrollbar-track {
-            background: #333;
-        }
-
-        .categories-container::-webkit-scrollbar-thumb {
-            background: #ff1493;
-            border-radius: 4px;
-        }
-
         .category-item {
             background: rgba(255,255,255,0.05);
-            padding: 10px 25px;
-            border-radius: 25px;
+            padding: 10px 22px;
+            border-radius: 12px;
             white-space: nowrap;
             cursor: pointer;
             transition: all 0.3s;
-            font-weight: 600;
-            border: 1px solid rgba(255,20,147,0.3);
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .category-item:hover,
         .category-item.active {
             background: linear-gradient(45deg, #ff1493, #00bfff);
             color: white;
-            transform: scale(1.05);
-            border-color: transparent;
+            transform: scale(1.02);
         }
 
-        /* Ads Section - Improved */
-        .ads-section {
-            max-width: 1400px;
-            margin: 40px auto;
-            padding: 0 30px;
-        }
-
+        /* إعلانات مباشرة - شبكة 2×2 */
         .ads-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-        }
-
-        @media (max-width: 1024px) {
-            .ads-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            margin: 40px 0;
         }
 
         @media (max-width: 768px) {
@@ -344,42 +299,22 @@
         }
 
         .ad-card {
-            background: linear-gradient(135deg, #1a1a1a, #2a0f1f);
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             border-radius: 20px;
             overflow: hidden;
             border: 2px solid #ff1493;
             transition: transform 0.3s, box-shadow 0.3s;
-            height: 180px;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 20px;
-            position: relative;
-            box-shadow: 0 10px 20px rgba(255,20,147,0.2);
-        }
-
-        .ad-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #ff1493, #00bfff, #ff1493);
-            border-radius: 20px;
-            z-index: -1;
-            animation: borderGlow 3s infinite;
-        }
-
-        @keyframes borderGlow {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
         }
 
         .ad-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(255,20,147,0.4);
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255,20,147,0.5);
         }
 
         .ad-card a {
@@ -402,100 +337,14 @@
         }
 
         .ad-title {
-            font-size: 1.4em;
+            font-size: 1.3em;
             font-weight: bold;
             color: #ff1493;
         }
 
         .ad-subtitle {
             font-size: 0.9em;
-            color: rgba(255,255,255,0.9);
-        }
-
-        /* In-feed Ad Banner */
-        .infeed-ad {
-            background: linear-gradient(90deg, #ff1493, #00bfff);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .infeed-ad:hover {
-            transform: scale(1.02);
-        }
-
-        .infeed-ad a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            font-size: 1.2em;
-        }
-
-        .infeed-ad i {
-            font-size: 2em;
-        }
-
-        /* Sticky Bottom Ad */
-        .sticky-ad {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(90deg, #1a1a1a, #2a0f1f);
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            border-top: 3px solid #ff1493;
-            z-index: 9999;
-            animation: slideUp 0.5s;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-
-        .sticky-ad-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .sticky-ad a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(45deg, #ff1493, #00bfff);
-            padding: 10px 30px;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        .close-ad {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background: #ff1493;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 0.9em;
-            border: 2px solid white;
+            color: rgba(255,255,255,0.8);
         }
 
         /* Main Content */
@@ -517,9 +366,6 @@
             font-weight: 700;
             position: relative;
             padding-right: 15px;
-            background: linear-gradient(45deg, #ff1493, #00bfff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .section-title::before {
@@ -533,20 +379,21 @@
             border-radius: 2px;
         }
 
-        /* Video Grid - 3 per row */
+        /* Video Grid */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .video-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .video-grid {
                 grid-template-columns: 1fr;
             }
@@ -554,24 +401,22 @@
 
         .video-card {
             background: #1a1a1a;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s;
             position: relative;
-            border: 1px solid rgba(255,20,147,0.2);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .video-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(255,20,147,0.3);
-            border-color: #ff1493;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255,20,147,0.2);
         }
 
         .video-thumbnail {
             position: relative;
             width: 100%;
-            height: 200px;
+            height: 180px;
             overflow: hidden;
             cursor: pointer;
             background: #000;
@@ -581,11 +426,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .video-card:hover .video-thumbnail video {
-            transform: scale(1.1);
         }
 
         .play-indicator {
@@ -593,58 +433,53 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(45deg, #ff1493, #00bfff);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5em;
+            font-size: 1.2em;
             opacity: 0;
             transition: all 0.3s;
-            box-shadow: 0 0 30px rgba(255,20,147,0.5);
         }
 
         .video-card:hover .play-indicator {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1.1);
         }
 
         .video-duration {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
+            bottom: 8px;
+            right: 8px;
             background: rgba(0,0,0,0.9);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.8em;
             z-index: 2;
-            border: 1px solid #ff1493;
         }
 
         .video-info {
-            padding: 20px;
+            padding: 15px;
         }
 
         .video-title {
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            line-height: 1.4;
         }
 
         .video-title i {
             color: #ff1493;
             cursor: pointer;
             transition: transform 0.3s;
-            font-size: 1.3em;
         }
 
         .video-title i:hover {
@@ -661,131 +496,54 @@
             justify-content: space-between;
             align-items: center;
             color: #aaa;
-            font-size: 0.9em;
-            margin-bottom: 15px;
+            font-size: 0.8em;
         }
 
         .video-stats {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
 
         .video-stats span {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
 
         .video-stats i {
             color: #ff1493;
-            font-size: 1em;
+            font-size: 0.9em;
         }
 
         .video-category {
             background: rgba(255,20,147,0.2);
-            padding: 5px 15px;
-            border-radius: 25px;
-            color: #ff1493;
-            font-size: 0.8em;
-            font-weight: 600;
-            border: 1px solid rgba(255,20,147,0.3);
-        }
-
-        /* Text Copy Section */
-        .copy-section {
-            background: linear-gradient(135deg, #1a1a1a, #2a0f1f);
+            padding: 3px 10px;
             border-radius: 20px;
-            padding: 25px;
-            margin: 30px 0;
-            border: 2px solid #ff1493;
-        }
-
-        .copy-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .copy-header h3 {
             color: #ff1493;
-            font-size: 1.5em;
-        }
-
-        .copy-header i {
-            font-size: 2em;
-            color: #ff1493;
-        }
-
-        .copy-content {
-            background: rgba(0,0,0,0.5);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(255,20,147,0.3);
-        }
-
-        .copy-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .copy-item:last-child {
-            border-bottom: none;
-        }
-
-        .copy-label {
-            min-width: 100px;
-            color: #ff1493;
-            font-weight: bold;
-        }
-
-        .copy-value {
-            flex: 1;
-            color: white;
-            word-break: break-all;
-        }
-
-        .copy-btn {
-            background: linear-gradient(45deg, #ff1493, #00bfff);
-            border: none;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .copy-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .copy-btn:active {
-            transform: scale(0.95);
+            font-size: 0.7em;
+            font-weight: 600;
         }
 
         /* Footer */
         .footer {
-            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            background: #0f0f0f;
             padding: 60px 30px 20px;
-            margin-top: 80px;
-            border-top: 3px solid #ff1493;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
         }
 
         .footer-section h3 {
             color: #ff1493;
             margin-bottom: 20px;
-            font-size: 1.3em;
+            font-size: 1.2em;
             position: relative;
             padding-bottom: 10px;
         }
@@ -795,17 +553,16 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 50px;
-            height: 3px;
+            width: 40px;
+            height: 2px;
             background: linear-gradient(45deg, #ff1493, #00bfff);
-            border-radius: 3px;
         }
 
         .footer-section p {
             color: #aaa;
-            line-height: 1.8;
+            line-height: 1.6;
             margin-bottom: 15px;
-            font-size: 0.95em;
+            font-size: 0.9em;
         }
 
         .footer-links {
@@ -820,7 +577,7 @@
             color: #aaa;
             text-decoration: none;
             transition: color 0.3s;
-            font-size: 0.95em;
+            font-size: 0.9em;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -831,32 +588,31 @@
         }
 
         .footer-links a i {
-            font-size: 0.9em;
+            font-size: 0.8em;
             color: #ff1493;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             margin-top: 20px;
         }
 
         .social-links a {
-            width: 45px;
-            height: 45px;
+            width: 38px;
+            height: 38px;
             background: rgba(255,255,255,0.05);
-            border-radius: 50%;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             transition: all 0.3s;
-            border: 1px solid rgba(255,20,147,0.3);
         }
 
         .social-links a:hover {
             background: linear-gradient(45deg, #ff1493, #00bfff);
-            transform: translateY(-5px) rotate(360deg);
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
@@ -865,7 +621,7 @@
             margin-top: 40px;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: #aaa;
-            font-size: 0.95em;
+            font-size: 0.9em;
         }
 
         .footer-bottom a {
@@ -897,7 +653,7 @@
                 <i class="fas fa-bolt"></i>
             </div>
             <h1>HOT VIBES</h1>
-            <p>منصة المحتوى الحصري للبالغين • أكثر من 100 فيديو • تحديث يومي</p>
+            <p>منصة المحتوى الحصري للبالغين • محتوى آمن • خصوصية تامة</p>
             <div class="hero-buttons">
                 <button class="hero-btn primary" onclick="document.getElementById('videos').scrollIntoView({behavior: 'smooth'})">
                     <i class="fas fa-play"></i>
@@ -919,13 +675,13 @@
                 HOT VIBES
             </div>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="ابحث عن فيديو...">
+                <input type="text" id="searchInput" placeholder="ابحث عن محتوى..." onkeyup="searchVideos()">
                 <i class="fas fa-search"></i>
             </div>
             <div class="nav-links">
                 <a href="#" class="active">الرئيسية</a>
-                <a href="#" onclick="filterCategory('trending')">الأكثر مشاهدة</a>
-                <a href="#" onclick="filterCategory('new')">جديد</a>
+                <a href="#">الأكثر مشاهدة</a>
+                <a href="#">جديد</a>
             </div>
         </div>
     </header>
@@ -946,25 +702,10 @@
 
     <!-- Main Content -->
     <div class="container" id="videos">
-        <!-- Top Ads Section -->
+
+        <!-- إعلانات مباشرة - 4 إعلانات -->
         <div class="ads-grid">
-            <!-- الإعلان 1 -->
-            <div class="ad-card">
-                <a href="https://network.nutaku.net/images/lp/aeons-echo/4-character-selector-v2/1/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MSwicyI6MSwiZSI6MTA5MDQsInAiOjJ9" target="_blank">
-                    <div class="ad-icon"><i class="fas fa-gamepad"></i></div>
-                    <div class="ad-title">Nutaku</div>
-                    <div class="ad-subtitle">ألعاب للبالغين</div>
-                </a>
-            </div>
-            <!-- الإعلان 2 -->
-            <div class="ad-card">
-                <a href="https://landing.mypervyfamily.com/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MTQ3LCJzIjo3ODgsImUiOjExMjY2LCJwIjoxMX0=" target="_blank">
-                    <div class="ad-icon"><i class="fas fa-heart"></i></div>
-                    <div class="ad-title">My Pervy Family</div>
-                    <div class="ad-subtitle">قصص حصرية</div>
-                </a>
-            </div>
-            <!-- الإعلان 3 -->
+            <!-- الإعلان 1: HentaiPros -->
             <div class="ad-card">
                 <a href="https://landing.hentaipros.com/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MjUsInMiOjIyOCwiZSI6ODk5NiwicCI6Mn0=" target="_blank">
                     <div class="ad-icon"><i class="fas fa-dragon"></i></div>
@@ -972,7 +713,8 @@
                     <div class="ad-subtitle">أنمي للبالغين</div>
                 </a>
             </div>
-            <!-- الإعلان 4 -->
+
+            <!-- الإعلان 2: Voyr -->
             <div class="ad-card">
                 <a href="https://landing.voyr.com/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MTM2LCJzIjo3MDAsImUiOjEwNzQ1LCJwIjoyfQ==" target="_blank">
                     <div class="ad-icon"><i class="fas fa-video"></i></div>
@@ -980,65 +722,30 @@
                     <div class="ad-subtitle">محتوى حصري</div>
                 </a>
             </div>
+
+            <!-- الإعلان 3: Nutaku -->
+            <div class="ad-card">
+                <a href="https://network.nutaku.net/images/lp/aeons-echo/4-character-selector-v2/1/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MSwicyI6MSwiZSI6MTA5MDQsInAiOjJ9" target="_blank">
+                    <div class="ad-icon"><i class="fas fa-gamepad"></i></div>
+                    <div class="ad-title">Nutaku</div>
+                    <div class="ad-subtitle">ألعاب للبالغين</div>
+                </a>
+            </div>
+
+            <!-- الإعلان 4: My Pervy Family -->
+            <div class="ad-card">
+                <a href="https://landing.mypervyfamily.com/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MTQ3LCJzIjo3ODgsImUiOjExMjY2LCJwIjoxMX0=" target="_blank">
+                    <div class="ad-icon"><i class="fas fa-heart"></i></div>
+                    <div class="ad-title">My Pervy Family</div>
+                    <div class="ad-subtitle">قصص حصرية</div>
+                </a>
+            </div>
         </div>
 
-        <!-- In-feed Ad -->
-        <div class="infeed-ad">
-            <a href="https://network.nutaku.net/images/lp/aeons-echo/4-character-selector-v2/1/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MSwicyI6MSwiZSI6MTA5MDQsInAiOjJ9" target="_blank">
-                <i class="fas fa-crown"></i>
-                <span>🔥 انضم لأكثر من 2 مليون لاعب في Nutaku - العب الآن مجاناً 🔥</span>
-                <i class="fas fa-crown"></i>
-            </a>
-        </div>
-
-        <!-- Videos Section Header -->
         <div class="section-header">
-            <h2 class="section-title">أحدث الفيديوهات 🔥</h2>
-            <span class="video-count">📹 81 فيديو</span>
+            <h2 class="section-title">المحتوى المتاح</h2>
         </div>
-
-        <!-- Video Grid -->
         <div class="video-grid" id="videoGrid"></div>
-
-        <!-- Text Copy Section for Easy Sharing -->
-        <div class="copy-section" id="copySection">
-            <div class="copy-header">
-                <h3>📋 رابط الفيديو الحالي</h3>
-                <i class="fas fa-copy" onclick="copyCurrentVideoInfo()"></i>
-            </div>
-            <div class="copy-content" id="currentVideoInfo">
-                <div class="copy-item">
-                    <span class="copy-label">العنوان:</span>
-                    <span class="copy-value" id="currentVideoTitle">HOT VIBES - فيديو حصري</span>
-                </div>
-                <div class="copy-item">
-                    <span class="copy-label">الرابط:</span>
-                    <span class="copy-value" id="currentVideoLink">https://hotvibes.com/video</span>
-                </div>
-                <div class="copy-item">
-                    <span class="copy-label">الوصف:</span>
-                    <span class="copy-value" id="currentVideoDesc">محتوى حصري للبالغين - جودة عالية</span>
-                </div>
-            </div>
-            <button class="copy-btn" onclick="copyAllVideoInfo()">
-                <i class="fas fa-copy"></i> نسخ جميع المعلومات
-            </button>
-        </div>
-    </div>
-
-    <!-- Sticky Bottom Ad -->
-    <div class="sticky-ad" id="stickyAd">
-        <div class="close-ad" onclick="closeStickyAd()">
-            <i class="fas fa-times"></i>
-        </div>
-        <div class="sticky-ad-content">
-            <span>🔥 إعلان خاص 🔥</span>
-            <a href="https://landing.mypervyfamily.com/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MTQ3LCJzIjo3ODgsImUiOjExMjY2LCJwIjoxMX0=" target="_blank">
-                <i class="fas fa-gift"></i>
-                جرب My Pervy Family مجاناً
-                <i class="fas fa-arrow-left"></i>
-            </a>
-        </div>
     </div>
 
     <!-- Footer -->
@@ -1046,50 +753,45 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>من نحن</h3>
-                <p>HOT VIBES منصة محتوى حصري للبالغين، نقدم أفضل الفيديوهات العربية والأجنبية بجودة عالية وتحديث يومي.</p>
+                <p>HOT VIBES منصة محتوى حصري للبالغين، نقدم تجربة آمنة وممتعة مع الالتزام الكامل بخصوصية المستخدمين.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-snapchat"></i></a>
                 </div>
             </div>
             <div class="footer-section">
                 <h3>روابط سريعة</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-left"></i> شروط الاستخدام</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-left"></i> إرشادات المجتمع</a></li>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الاستخدام</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>اتصل بنا</h3>
                 <ul class="footer-links">
                     <li><a href="#"><i class="fas fa-envelope"></i> support@hotvibes.com</a></li>
-                    <li><a href="#"><i class="fas fa-lock"></i> الإبلاغ عن مخالفة</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
-                <h3>تأكيد السن</h3>
-                <p>باستخدامك لهذا الموقع، أنت تؤكد أنك فوق سن 18 عاماً وأنك توافق على شروط الاستخدام.</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025-2026 HOT VIBES - جميع الحقوق محفوظة. تصميم وتطوير احترافي.</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">
-                <a href="#">سياسة الخصوصية</a> • <a href="#">شروط الاستخدام</a> • <a href="#">إرشادات المجتمع</a>
-            </p>
+            <p>© 2025-2026 HOT VIBES - جميع الحقوق محفوظة</p>
         </div>
     </footer>
 
-    <!-- PopAds Code -->
+    <!-- الإعلان الخامس: PopAds (خفي) -->
     <script type="text/javascript" data-cfasync="false">
-        (function(){var m=window,d="fd85052e7c840ba967c5c233ddb7a912",c=[["siteId",32*298*621-643078],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],k=["d3d3LmNkbjRhZHMuY29tL1kvZ2NhbnZhcy10by1ibG9iLm1pbi5qcw==","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvVS9wcy91bWVkaXVtLWVkaXRvci5taW4uY3Nz"],q=-1,x,z,w=function(){clearTimeout(z);q++;if(k[q]&&!(1797715620000<(new Date).getTime()&&1<q)){x=m.document.createElement("script");x.type="text/javascript";x.async=!0;var n=m.document.getElementsByTagName("script")[0];x.src="https://"+atob(k[q]);x.crossOrigin="anonymous";x.onerror=w;x.onload=function(){clearTimeout(z);m[d.slice(0,16)+d.slice(0,16)]||w()};z=setTimeout(w,5E3);n.parentNode.insertBefore(x,n)}};if(!m[d]){try{Object.freeze(m[d]=c)}catch(e){}w()}})();
-    </script>
+/*<![CDATA[/* */
+(function(){var m=window,d="fd85052e7c840ba967c5c233ddb7a912",c=[["siteId",32*298*621-643078],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],k=["d3d3LmNkbjRhZHMuY29tL1kvZ2NhbnZhcy10by1ibG9iLm1pbi5qcw==","ZDNnNW92Zm5nanc5YncuY2xvdWRmcm9udC5uZXQvVS9wcy91bWVkaXVtLWVkaXRvci5taW4uY3Nz"],q=-1,x,z,w=function(){clearTimeout(z);q++;if(k[q]&&!(1797715620000<(new Date).getTime()&&1<q)){x=m.document.createElement("script");x.type="text/javascript";x.async=!0;var n=m.document.getElementsByTagName("script")[0];x.src="https://"+atob(k[q]);x.crossOrigin="anonymous";x.onerror=w;x.onload=function(){clearTimeout(z);m[d.slice(0,16)+d.slice(0,16)]||w()};z=setTimeout(w,5E3);n.parentNode.insertBefore(x,n)}};if(!m[d]){try{Object.freeze(m[d]=c)}catch(e){}w()}})();
+/*]]>/* */
+</script>
+
+    <!-- الإعلان السادس: Adsterra (جديد - تم قبوله) -->
+    <script async="async" data-cfasync="false" src="https://pl28780899.effectivegatecpm.com/bbf9252783c6400054c367faac9cc70b/invoke.js"></script>
+    <div id="container-bbf9252783c6400054c367faac9cc70b"></div>
 
     <script>
-        // قائمة الفيديوهات الكاملة
+        // قائمة الفيديوهات الكاملة (81 فيديو)
         const videoUrls = [
             "https://e.top4top.io/m_3702anzpf1.mp4",
             "https://f.top4top.io/m_370233ki61.mp4",
@@ -1188,14 +890,10 @@
             "سالب مغربي",
             "مثلي تونسي",
             "سالب جزائري",
-            "ورع عراقي",
-            "مثلي خليجي",
-            "سالب سوري"
+            "ورع عراقي"
         ];
 
         const categories = ['سالب', 'موجب', 'ورع', 'مثلي', 'شاذ', 'عربي', 'أجنبي'];
-
-        let currentVideoIndex = 0;
 
         function loadVideos() {
             const grid = document.getElementById('videoGrid');
@@ -1203,23 +901,17 @@
             
             grid.innerHTML = '';
 
-            videoUrls.forEach((url, index) => {
+            videoUrls.slice(0, 30).forEach((url, index) => {
                 const title = videoTitles[index % videoTitles.length];
                 const category = categories[index % categories.length];
-                const views = Math.floor(Math.random() * 50000) + 1000;
-                const likes = Math.floor(views * 0.1);
                 const duration = Math.floor(Math.random() * 15) + 2 + ':' + Math.floor(Math.random() * 60).toString().padStart(2, '0');
                 
                 const videoCard = document.createElement('div');
                 videoCard.className = 'video-card';
                 videoCard.setAttribute('data-category', category);
                 videoCard.setAttribute('data-title', title);
-                videoCard.setAttribute('data-url', url);
-                videoCard.setAttribute('data-index', index);
-                videoCard.setAttribute('onclick', `selectVideo(${index})`);
-                
                 videoCard.innerHTML = `
-                    <div class="video-thumbnail" onclick="playVideo('${url}', ${index})">
+                    <div class="video-thumbnail" onclick="playVideo('${url}')">
                         <video loop muted playsinline preload="auto">
                             <source src="${url}" type="video/mp4">
                         </video>
@@ -1231,12 +923,11 @@
                     <div class="video-info">
                         <div class="video-title">
                             ${title}
-                            <i class="far fa-heart" onclick="event.stopPropagation(); toggleLike(this)"></i>
+                            <i class="far fa-heart" onclick="toggleLike(this)"></i>
                         </div>
                         <div class="video-meta">
                             <div class="video-stats">
-                                <span><i class="fas fa-eye"></i> ${views.toLocaleString()}</span>
-                                <span><i class="fas fa-heart"></i> ${likes.toLocaleString()}</span>
+                                <span><i class="fas fa-eye"></i> ${Math.floor(Math.random() * 1000) + 100}</span>
                             </div>
                             <span class="video-category">#${category}</span>
                         </div>
@@ -1259,49 +950,8 @@
             });
         }
 
-        function playVideo(url, index) {
-            selectVideo(index);
+        function playVideo(url) {
             window.open(url, '_blank');
-            
-            // Open random ad
-            setTimeout(() => {
-                const adLinks = [
-                    "https://network.nutaku.net/images/lp/aeons-echo/4-character-selector-v2/1/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MSwicyI6MSwiZSI6MTA5MDQsInAiOjJ9",
-                    "https://landing.mypervyfamily.com/?ats=eyJhIjoxNDA2NTE2LCJjIjo2Mzk5OTExMiwibiI6MTQ3LCJzIjo3ODgsImUiOjExMjY2LCJwIjoxMX0="
-                ];
-                const randomAd = adLinks[Math.floor(Math.random() * adLinks.length)];
-                window.open(randomAd, '_blank');
-            }, 500);
-        }
-
-        function selectVideo(index) {
-            currentVideoIndex = index;
-            const title = videoTitles[index % videoTitles.length];
-            const url = videoUrls[index];
-            
-            document.getElementById('currentVideoTitle').textContent = title;
-            document.getElementById('currentVideoLink').textContent = url;
-            document.getElementById('currentVideoDesc').textContent = `محتوى حصري للبالغين - ${title} - جودة عالية`;
-        }
-
-        function copyCurrentVideoInfo() {
-            const title = document.getElementById('currentVideoTitle').textContent;
-            const url = document.getElementById('currentVideoLink').textContent;
-            const desc = document.getElementById('currentVideoDesc').textContent;
-            
-            const text = `العنوان: ${title}\nالرابط: ${url}\nالوصف: ${desc}`;
-            navigator.clipboard.writeText(text);
-            alert('✅ تم نسخ معلومات الفيديو!');
-        }
-
-        function copyAllVideoInfo() {
-            const title = document.getElementById('currentVideoTitle').textContent;
-            const url = document.getElementById('currentVideoLink').textContent;
-            const desc = document.getElementById('currentVideoDesc').textContent;
-            
-            const text = `HOT VIBES - ${title}\n${url}\n${desc}\n\n🔥 تفضل بزيارة HOT VIBES للمزيد: ${window.location.href}`;
-            navigator.clipboard.writeText(text);
-            alert('✅ تم نسخ جميع المعلومات!');
         }
 
         function toggleLike(element) {
@@ -1325,50 +975,26 @@
             });
         }
 
-        function filterCategory(type) {
+        function searchVideos() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
             const cards = document.querySelectorAll('.video-card');
+            
             cards.forEach(card => {
-                if (type === 'trending') {
+                const title = card.getAttribute('data-title')?.toLowerCase() || '';
+                if (title.includes(term)) {
                     card.style.display = 'block';
                 } else {
-                    card.style.display = 'block';
+                    card.style.display = 'none';
                 }
             });
         }
-
-        // Search function with debounce
-        let searchTimeout;
-        document.getElementById('searchInput').addEventListener('keyup', function() {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                const term = this.value.toLowerCase();
-                const cards = document.querySelectorAll('.video-card');
-                
-                cards.forEach(card => {
-                    const title = card.getAttribute('data-title')?.toLowerCase() || '';
-                    if (title.includes(term) || term === '') {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }, 300);
-        });
 
         function copySiteLink() {
             navigator.clipboard.writeText(window.location.href);
             alert('✅ تم نسخ رابط الموقع!');
         }
 
-        function closeStickyAd() {
-            document.getElementById('stickyAd').style.display = 'none';
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            loadVideos();
-            selectVideo(0);
-        });
+        document.addEventListener('DOMContentLoaded', loadVideos);
     </script>
 </body>
 </html>
